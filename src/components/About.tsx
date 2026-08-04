@@ -29,7 +29,7 @@ export default function About() {
               <Image
                 src="/about_main.png"
                 fill
-                alt="Bhagwan Aadinath College Campus"
+                alt="Birla Heritage Siwan Campus"
                 className="object-cover"
                 priority
               />
@@ -71,11 +71,11 @@ export default function About() {
           <div className="w-full lg:w-[52%] pt-0 lg:pt-2 pb-8">
 
             <h2 className="text-3xl md:text-4xl lg:text-[42px] font-extrabold text-[#111111] leading-[1.15] mb-5">
-              Bhagwan Aadinath College<br />Of <span className="text-[#F9C301]">Education</span>
+              Birla Heritage<br />Siwan
             </h2>
 
             <p className="text-gray-500 text-[15px] leading-relaxed mb-3">
-              Bhagwan Aadinath College of Education aims to being a marvellous change in the field of teacher education. Active, smart, well equipped teachers enriched with knowledge of all modern teaching techniques are going to be the product of this institute.
+              Birla Heritage Siwan aims to being a marvellous change in the field of education. Active, smart, well equipped teachers enriched with knowledge of all modern teaching techniques are going to be the product of this institute.
             </p>
             <p className="text-gray-500 text-[15px] leading-relaxed mb-7">
               The College is situated amongst agricultural fields, in a serene and inspiring environment. Established in 2015, run under the Digambar Jain Education Welfayar Society, it is a Minority Institution accredited with <strong className="text-[#111111]">"A" Grade by NAAC</strong> and declared Autonomous by UGC in 2025. It offers courses like B.A., B.Sc., B.Com., B.Ed., and B.P.Ed., recognised by UGC 12B & 2f & NCTE.
@@ -108,7 +108,7 @@ export default function About() {
                 </div>
                 <div>
                   <p className="text-[#F9C301] font-semibold text-xs uppercase tracking-wider">Call Now</p>
-                  <p className="text-[#0a0a0a] font-extrabold text-lg leading-tight">+91 9415508353</p>
+                  <p className="text-[#0a0a0a] font-extrabold text-lg leading-tight">+91 9876543210</p>
                 </div>
               </div>
             </div>

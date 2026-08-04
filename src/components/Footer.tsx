@@ -37,8 +37,8 @@ export default function Footer() {
         <div className="flex flex-col gap-6">
           <Link href="/" className="block w-fit">
             <Image
-              src="/logo (1).png"
-              alt="Bhagwan Aadinath College Logo"
+              src="/modern-school-logo-featuring-stylized-book-icon-symbolizing-education-learning-sleek-design-graduation-cap-315282989.webp"
+              alt="Birla Heritage Siwan Logo"
               width={260}
               height={90}
               className="h-20 w-auto object-contain object-left"
@@ -46,26 +46,26 @@ export default function Footer() {
             />
           </Link>
           <p className="text-gray-400 text-[14px] leading-relaxed">
-            Bhagwan Aadinath College of Education aims to being a marvellous change in the field of teacher education. Active, smart, well equipped teachers enriched with knowledge of all modern teaching techniques are going to be the product of Bhagwan Aadinath College of Education.
+            Our institution is dedicated to providing excellence in education and fostering a culture of innovation, learning, and overall holistic development for a brighter future.
           </p>
           <div className="flex flex-col gap-4 mt-2">
             <div className="flex items-center gap-3 text-gray-400 text-[13.5px] font-medium">
               <div className="bg-[#F9C301] rounded flex items-center justify-center w-7 h-7 flex-shrink-0 text-[#111]">
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
               </div>
-              <span>+91 9453675775, +91 8545844444</span>
+              <span>+91 9876543210, +91 9876543211</span>
             </div>
             <div className="flex items-center gap-3 text-gray-400 text-[13.5px] font-medium">
               <div className="bg-[#F9C301] rounded flex items-center justify-center w-7 h-7 flex-shrink-0 text-[#111]">
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
               </div>
-              <span>bhagwanaadinath686@gmail.com</span>
+              <span>contact@schoolname.edu</span>
             </div>
             <div className="flex items-start gap-3 text-gray-400 text-[13.5px] font-medium">
               <div className="bg-[#F9C301] rounded flex items-center justify-center w-7 h-7 flex-shrink-0 text-[#111]">
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
               </div>
-              <span className="mt-1">Jhansi Road, Maharra Lalitpur-284403</span>
+              <span className="mt-1">123 Education Street, City Name - 000000</span>
             </div>
           </div>
           {/* Social */}
@@ -168,7 +168,7 @@ export default function Footer() {
       <div className="border-t border-white/10">
         <div className="max-w-[1400px] mx-auto px-8 md:px-12 lg:px-20 py-5 flex flex-col md:flex-row justify-between items-center gap-3">
           <p className="text-gray-500 text-[13.5px]">
-            © Copyright {new Date().getFullYear()} All rights reserved by <span className="text-[#F9C301] font-medium">Nighwan Technology Private Limited</span>
+            © Copyright {new Date().getFullYear()} All rights reserved by <a href="https://nighwantech.com/" target="_blank" rel="noopener noreferrer" className="text-[#F9C301] font-medium hover:underline">Nighwan Technology</a>
           </p>
           <div className="flex items-center gap-6">
             <Link href="#" className="text-gray-500 text-[13px] hover:text-[#F9C301] transition-colors">Privacy Policy</Link>

@@ -32,16 +32,16 @@ export default function Navbar() {
             {/* Scrolling Marquee for long text */}
             <div className="flex-1 overflow-hidden relative flex items-center h-full">
               <div className="whitespace-nowrap text-[13px] w-full animate-marquee inline-block">
-                B.A.B.Ed.& B.Sc.B.Ed. (Secondary) Eligiable Candidate List for Admission declared
+                Important announcement or latest news updates goes here.
               </div>
             </div>
           </div>
           
           <div className="flex items-center gap-4 h-full pl-4 shrink-0 bg-[#126b59] z-10 relative">
             <div className="w-[1px] h-4 bg-white/30 hidden md:block"></div>
-            <a href="tel:9415508353" className="flex items-center gap-2 text-[13px] md:text-sm font-medium hover:text-[#F9A826] whitespace-nowrap transition-colors">
+            <a href="tel:+919876543210" className="flex items-center gap-2 text-[13px] md:text-sm font-medium hover:text-[#F9A826] whitespace-nowrap transition-colors">
               <svg className="w-4 h-4 text-[#F9A826]" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
-              9415508353
+              +91 9876543210
             </a>
           </div>
         </div>
@@ -51,8 +51,8 @@ export default function Navbar() {
         {/* Logo area */}
         <Link href="/" className="flex items-center no-underline">
           <Image
-            src="/logo (1).png"
-            alt="Bhagwan Aadinath College Logo"
+            src="/modern-school-logo-featuring-stylized-book-icon-symbolizing-education-learning-sleek-design-graduation-cap-315282989.webp"
+            alt="Birla Heritage Siwan Logo"
             width={500}
             height={160}
             className="h-16 md:h-26 w-auto object-contain drop-shadow-lg"

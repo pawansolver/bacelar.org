@@ -5,16 +5,22 @@ import Image from "next/image";
 
 const heroSlides = [
   {
-    image: "/vcimage/vc.2.jpeg",
-    subtitle: "BUNDELKHAND UNIVERSITY VC",
-    title: "Meeting With VC\nBundelkhand University\nJhansi",
-    desc: "Meeting with VC Bundelkhand University Jhansi"
+    image: "/hero_slider/1.png",
+    subtitle: "WORLD CLASS EDUCATION",
+    title: "Empowering Students\nFor a Better Tomorrow",
+    desc: "Discover a diverse community of learners and educators."
   },
   {
-    image: "/vcimage/vc image.jpeg",
-    subtitle: "PRIZE DISTRIBUTION",
-    title: "Prize Distribution",
-    desc: "Prize Distribution"
+    image: "/hero_slider/2.png",
+    subtitle: "STATE OF THE ART CAMPUS",
+    title: "Experience Our\nModern Campus",
+    desc: "A perfect environment designed for your success."
+  },
+  {
+    image: "/hero_slider/3.png",
+    subtitle: "GLOBAL LEARNING",
+    title: "Shape Your Future\nWith Excellence",
+    desc: "Join us and be part of an innovative learning journey."
   }
 ];
 
@@ -40,12 +46,10 @@ export default function HeroSection() {
             idx === current ? "opacity-100" : "opacity-0"
           }`}
         >
-          <Image 
+          <img 
             src={slide.image} 
             alt={`Hero background ${idx + 1}`}
-            fill
-            className="object-cover object-center"
-            priority={idx === 0}
+            className="w-full h-full object-cover object-center"
           />
         </div>
       ))}
