@@ -1,183 +1,154 @@
 "use client";
 import Link from "next/link";
-import Image from "next/image";
+import React from "react";
 
-const menuLinks = [
-  { name: "Home", submenu: [] },
-  { name: "Academics", submenu: ["Programme", "Academic Staff", "Administrative Records", "Fee Structure", "Facilities", "Students 2025-26", "Academic Cal 2025-26", "UP Praman"] },
-  { name: "Student", submenu: ["Admission", "Program Fee", "Exam Form", "Result"] },
-  { name: "Committee", submenu: [] },
-  { name: "IQAC", submenu: [] },
-  { name: "Affiliation", submenu: [] },
-  { name: "RTI", submenu: [] },
-  { name: "Contact Us", submenu: [] },
-  { name: "Library", submenu: [] },
-  { name: "ITEP", submenu: ["Itep Staff Perticular", "FDR", "Form A", "Mandatory Disclosure"] },
-  { name: "NAAC", submenu: ["IIQA", "SSR", "AQAR 2021-22", "AQAR 2022-23", "AQAR 2023-24", "NAAC Certificate", "NAAC Quality Profile"] },
-  { name: "NIRF", submenu: ["Department Of Science", "Department Of Art", "Department Of Commerce"] },
+const importantLinks = [
+  { name: "Admission Enquiry", href: "/admissions" },
+  { name: "Admission Process", href: "/admission-process" },
+  { name: "Campus Gallery", href: "/gallery#campus" },
+  { name: "Student's Corner", href: "/gallery#students-corner" },
 ];
 
-const quickLinks = ["Apply", "Visit", "Calendar", "Parent Zone", "Student Login"];
-
-const footerImages = [
-  "/footerimage/1.png",
-  "/footerimage/2.png",
-  "/footerimage/3.png",
-  "/footerimage/9.png",
+const quickLinks = [
+  { name: "Home", href: "/" },
+  { name: "About Us", href: "/about-us" },
+  { name: "Admissions", href: "/admissions" },
+  { name: "Gallery", href: "/gallery" },
+  { name: "Contact Us", href: "/contact-us" },
 ];
 
 export default function Footer() {
   return (
-    <footer className="w-full bg-[#111111] text-white">
-
+    <footer className="w-full bg-[#126b59] text-white mt-12">
       {/* Main Footer Body */}
-      <div className="max-w-[1400px] mx-auto px-8 md:px-12 lg:px-20 py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[1.2fr_1fr_1fr_220px] gap-12 lg:gap-10">
-
-        {/* Col 1: Logo + About */}
+      <div className="max-w-7xl mx-auto px-6 md:px-8 py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
+        
+        {/* Col 1: About Us */}
         <div className="flex flex-col gap-6">
-          <Link href="/" className="block w-fit">
-            <Image
-              src="/modern-school-logo-featuring-stylized-book-icon-symbolizing-education-learning-sleek-design-graduation-cap-315282989.webp"
-              alt="Birla Heritage Siwan Logo"
-              width={260}
-              height={90}
-              className="h-20 w-auto object-contain object-left"
-              priority
-            />
-          </Link>
-          <p className="text-gray-400 text-[14px] leading-relaxed">
-            Our institution is dedicated to providing excellence in education and fostering a culture of innovation, learning, and overall holistic development for a brighter future.
+          <div>
+            <h4 className="text-white font-bold text-[17px] uppercase tracking-wide mb-3" style={{fontFamily:'var(--font-heading)'}}>
+              ABOUT US
+            </h4>
+            <div className="w-12 h-[2px] bg-[#F9A826]"></div>
+          </div>
+          <p className="text-white/90 text-[14.5px] leading-[1.8]">
+            At Birla Heritage International School Siwan we aim to promote the optimum overall development of each child through planned play experiences which reflect children's interests and curiosity in the world around them.
           </p>
-          <div className="flex flex-col gap-4 mt-2">
-            <div className="flex items-center gap-3 text-gray-400 text-[13.5px] font-medium">
-              <div className="bg-[#F9C301] rounded flex items-center justify-center w-7 h-7 flex-shrink-0 text-[#111]">
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
-              </div>
-              <span>+91 9876543210, +91 9876543211</span>
-            </div>
-            <div className="flex items-center gap-3 text-gray-400 text-[13.5px] font-medium">
-              <div className="bg-[#F9C301] rounded flex items-center justify-center w-7 h-7 flex-shrink-0 text-[#111]">
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
-              </div>
-              <span>contact@schoolname.edu</span>
-            </div>
-            <div className="flex items-start gap-3 text-gray-400 text-[13.5px] font-medium">
-              <div className="bg-[#F9C301] rounded flex items-center justify-center w-7 h-7 flex-shrink-0 text-[#111]">
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
-              </div>
-              <span className="mt-1">123 Education Street, City Name - 000000</span>
-            </div>
-          </div>
-          {/* Social */}
-          <div className="flex items-center gap-3 mt-2">
-            <Link href="#" className="w-9 h-9 flex items-center justify-center border border-white/15 rounded hover:border-[#F9C301] hover:text-[#F9C301] text-gray-400 transition-colors">
+          <Link href="/about-us" className="text-[#F9A826] text-[14.5px] hover:underline w-fit font-medium">
+            Read More
+          </Link>
+          {/* Social Icons */}
+          <div className="flex items-center gap-2 mt-2">
+            <a href="https://www.facebook.com/openmindssiwan/" target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-full bg-[#0a4539] flex items-center justify-center hover:bg-[#F9A826] text-white transition-colors shadow-sm">
               <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
-            </Link>
-            <Link href="#" className="w-9 h-9 flex items-center justify-center border border-white/15 rounded hover:border-[#F9C301] hover:text-[#F9C301] text-gray-400 transition-colors">
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-            </Link>
-            <Link href="#" className="w-9 h-9 flex items-center justify-center border border-white/15 rounded hover:border-[#F9C301] hover:text-[#F9C301] text-gray-400 transition-colors">
-              <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 001.46 6.42 29 29 0 001 12a29 29 0 00.46 5.58 2.78 2.78 0 001.95 1.95C5.12 20 12 20 12 20s6.88 0 8.59-.47a2.78 2.78 0 001.95-1.95A29 29 0 0023 12a29 29 0 00-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="#111"/></svg>
-            </Link>
+            </a>
+            <a href="https://www.instagram.com/birlaheritage_siwan?igsh=dXhiYW4xanR2bmY1" target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-full bg-[#0a4539] flex items-center justify-center hover:bg-[#F9A826] text-white transition-colors shadow-sm">
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </a>
+            <a href="https://x.com/openminds_siwan" target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-full bg-[#0a4539] flex items-center justify-center hover:bg-[#F9A826] text-white transition-colors shadow-sm">
+              <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+            <a href="https://www.youtube.com/@openiminds_siwan/about" target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-full bg-[#0a4539] flex items-center justify-center hover:bg-[#F9A826] text-white transition-colors shadow-sm">
+              <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M21.2 3.6c-1.1-.3-5.2-.6-9.2-.6s-8.1.3-9.2.6C1.5 4.1 1 5.3 1 7.2v9.6c0 1.9.5 3.1 1.8 3.6 1.1.3 5.2.6 9.2.6s8.1-.3 9.2-.6c1.3-.5 1.8-1.7 1.8-3.6V7.2c0-1.9-.5-3.1-1.8-3.6zM9.5 15.5V8.5l6.5 3.5-6.5 3.5z"/></svg>
+            </a>
           </div>
         </div>
 
-        {/* Col 2: Navigation with hover submenus — same as Navbar */}
-        <div>
-          <h4 className="text-white font-bold text-[15px] uppercase tracking-[0.18em] mb-6 flex items-center gap-3">
-            <span className="block w-5 h-[2px] bg-[#F9C301]"></span>
-            Navigation
-          </h4>
-          <div className="flex flex-col gap-3">
-            {menuLinks.map((link) => (
-              <div key={link.name} className="group relative w-fit">
-                <Link
-                  href="#"
-                  className="text-gray-400 text-[13.5px] font-medium hover:text-[#F9C301] transition-colors flex items-center gap-2"
-                >
-                  <span className="block w-1 h-1 rounded-full bg-[#F9C301] opacity-0 group-hover:opacity-100 transition-opacity flex-shrink-0"></span>
-                  {link.name}
-                  {link.submenu.length > 0 && (
-                    <svg className="w-3 h-3 transition-transform duration-300 group-hover:rotate-180 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M19 9l-7 7-7-7"/>
-                    </svg>
-                  )}
-                </Link>
-                {/* Hover Submenu — same mechanism as Navbar */}
-                {link.submenu.length > 0 && (
-                  <div className="absolute left-0 top-full z-50 pt-1 hidden group-hover:block">
-                    <div className="bg-[#1a1a1a] border-t-[3px] border-[#F9C301] shadow-xl min-w-[220px]">
-                      {link.submenu.map((sub, idx) => (
-                        <Link
-                          key={sub}
-                          href="#"
-                          className={`block text-white text-[13px] font-normal py-2.5 px-5 hover:bg-[#2a2a2a] hover:text-[#F9C301] transition-colors ${idx !== link.submenu.length - 1 ? "border-b border-white/10" : ""}`}
-                        >
-                          {sub}
-                        </Link>
-                      ))}
-                    </div>
-                  </div>
-                )}
-              </div>
-            ))}
+        {/* Col 2: Important Links */}
+        <div className="flex flex-col gap-6">
+          <div>
+            <h4 className="text-white font-bold text-[17px] uppercase tracking-wide mb-3" style={{fontFamily:'var(--font-heading)'}}>
+              IMPORTANT LINKS
+            </h4>
+            <div className="w-12 h-[2px] bg-[#F9A826]"></div>
           </div>
-        </div>
-
-        {/* Col 3: Quick Links */}
-        <div>
-          <h4 className="text-white font-bold text-[15px] uppercase tracking-[0.18em] mb-6 flex items-center gap-3">
-            <span className="block w-5 h-[2px] bg-[#F9C301]"></span>
-            Quick Links
-          </h4>
-          <div className="flex flex-col gap-3">
-            {quickLinks.map((link) => (
+          <div className="flex flex-col">
+            {importantLinks.map((link) => (
               <Link
-                key={link}
-                href="#"
-                className="text-gray-400 text-[13.5px] font-medium hover:text-[#F9C301] transition-colors flex items-center gap-2 group w-fit"
+                key={link.name}
+                href={link.href}
+                className="text-white/90 text-[14.5px] py-2.5 border-b border-white/20 hover:text-[#F9A826] transition-colors flex items-center gap-3 group"
               >
-                <span className="block w-1 h-1 rounded-full bg-[#F9C301] opacity-0 group-hover:opacity-100 transition-opacity flex-shrink-0"></span>
-                {link}
+                <svg className="w-3 h-3 text-white/70 group-hover:text-[#F9A826] transition-colors" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+                </svg>
+                {link.name}
               </Link>
             ))}
           </div>
         </div>
 
-        {/* Col 4: Gallery Images stacked on main axis */}
-        <div className="flex flex-col gap-3">
-          <h4 className="text-white font-bold text-[15px] uppercase tracking-[0.18em] mb-2 flex items-center gap-3">
-            <span className="block w-5 h-[2px] bg-[#F9C301]"></span>
-            Gallery
-          </h4>
-          {footerImages.map((src, idx) => (
-            <div key={idx} className="relative w-full h-[86px] overflow-hidden group border border-white/10 hover:border-[#F9C301] transition-colors bg-white rounded-md p-2">
-              <Image
-                src={src}
-                alt={`Gallery Logo ${idx + 1}`}
-                fill
-                className="object-contain p-1 transition-transform duration-500 group-hover:scale-105"
-              />
+        {/* Col 3: Quick Links */}
+        <div className="flex flex-col gap-6">
+          <div>
+            <h4 className="text-white font-bold text-[17px] uppercase tracking-wide mb-3" style={{fontFamily:'var(--font-heading)'}}>
+              QUICK LINKS
+            </h4>
+            <div className="w-12 h-[2px] bg-[#F9A826]"></div>
+          </div>
+          <div className="flex flex-col">
+            {quickLinks.map((link) => (
+              <Link
+                key={link.name}
+                href={link.href}
+                className="text-white/90 text-[14.5px] py-2.5 border-b border-white/20 hover:text-[#F9A826] transition-colors flex items-center gap-3 group"
+              >
+                <svg className="w-3 h-3 text-white/70 group-hover:text-[#F9A826] transition-colors" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+                </svg>
+                {link.name}
+              </Link>
+            ))}
+          </div>
+        </div>
+
+        {/* Col 4: Get In Touch */}
+        <div className="flex flex-col gap-6">
+          <div>
+            <h4 className="text-white font-bold text-[17px] uppercase tracking-wide mb-3" style={{fontFamily:'var(--font-heading)'}}>
+              GET IN TOUCH
+            </h4>
+            <div className="w-12 h-[2px] bg-[#F9A826]"></div>
+          </div>
+          <div className="flex flex-col gap-5 mt-2">
+            <div className="flex items-start gap-4 text-white/90 text-[14.5px]">
+              <svg className="w-5 h-5 mt-1 shrink-0 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+              <div className="leading-[1.7]">
+                <span className="font-semibold block mb-1">Corporate Office</span>
+                Birla Heritage International School
+                <br />Survey No 813 - 817 Markan,
+                <br />Siwan, Bihar - 841226
+              </div>
             </div>
-          ))}
+            <div className="flex items-center gap-4 text-white/90 text-[14.5px]">
+              <svg className="w-5 h-5 shrink-0 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+              <div className="flex flex-col">
+                <a href="tel:+919122899149" className="hover:text-[#F9A826]">+91 9122899149</a>
+                <a href="tel:+917633800196" className="hover:text-[#F9A826]">+91 7633800196</a>
+              </div>
+            </div>
+            <div className="flex items-center gap-4 text-white/90 text-[14.5px]">
+              <svg className="w-5 h-5 shrink-0 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+              <a href="mailto:info@birlaheritage.com" className="hover:text-[#F9A826]">info@birlaheritage.com</a>
+            </div>
+          </div>
         </div>
 
       </div>
 
       {/* Bottom Bar */}
-      <div className="border-t border-white/10">
-        <div className="max-w-[1400px] mx-auto px-8 md:px-12 lg:px-20 py-5 flex flex-col md:flex-row justify-between items-center gap-3">
-          <p className="text-gray-500 text-[13.5px]">
-            © Copyright {new Date().getFullYear()} All rights reserved by <a href="https://nighwantech.com/" target="_blank" rel="noopener noreferrer" className="text-[#F9C301] font-medium hover:underline">Nighwan Technology</a>
+      <div className="bg-[#0e5244] py-5 border-t border-black/10">
+        <div className="max-w-7xl mx-auto px-6 md:px-8 flex flex-col md:flex-row justify-between items-center gap-3 text-[13.5px] text-white/70">
+          <p>
+            © Copyright {new Date().getFullYear()} All rights reserved by <a href="https://nighwantech.com/" target="_blank" rel="noopener noreferrer" className="text-[#F9A826] font-medium hover:underline">Nighwan Technology</a>
           </p>
           <div className="flex items-center gap-6">
-            <Link href="#" className="text-gray-500 text-[13px] hover:text-[#F9C301] transition-colors">Privacy Policy</Link>
-            <Link href="#" className="text-gray-500 text-[13px] hover:text-[#F9C301] transition-colors">Terms of Use</Link>
-            <Link href="#" className="text-gray-500 text-[13px] hover:text-[#F9C301] transition-colors">Sitemap</Link>
+            <Link href="#" className="hover:text-[#F9A826] transition-colors">Privacy Policy</Link>
+            <Link href="#" className="hover:text-[#F9A826] transition-colors">Terms of Use</Link>
+            <Link href="#" className="hover:text-[#F9A826] transition-colors">Sitemap</Link>
           </div>
         </div>
       </div>
-
     </footer>
   );
 }

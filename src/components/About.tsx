@@ -6,15 +6,15 @@ import { motion } from "motion/react";
 
 export default function About() {
   return (
-    <section className="w-full py-16 bg-white relative overflow-hidden">
+    <section className="w-full py-12 md:py-16 bg-white relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 md:px-8 relative z-10">
-        <div className="text-center mb-10">
-          <h2 className="heading-xl text-3xl md:text-4xl inline-block relative max-w-4xl">
+        <div className="text-center mb-8 md:mb-10">
+          <h2 className="heading-xl text-2xl sm:text-3xl md:text-4xl inline-block relative max-w-4xl">
             Birla Open Minds International School - A School that redefines education.
           </h2>
         </div>
         <div className="flex flex-col md:flex-row items-center gap-8 lg:gap-12">
-          <div className="md:w-1/2 text-[#4b5563] text-[17px] leading-relaxed font-medium text-justify">
+          <div className="w-full md:w-1/2 text-[#4b5563] text-[15px] md:text-[17px] leading-relaxed font-medium text-justify">
             <p className="mb-4">
               Birla Open Minds reiterate and restore what Tagore called the hallmarks of childhood- &apos;the Joy of Learning&apos; and the &apos;Creative Spirit&apos;. The School firmly believes in the uniqueness of each child, thereby fostering holistic development through integrated learning opportunities nurturing the 21st Century Skills.
             </p>
@@ -58,7 +58,7 @@ export default function About() {
             >
               <path d="M12 2v20M2 12h20" />
             </motion.svg>
-            <div className="relative z-10 w-full h-[400px] rounded-sm overflow-hidden shadow-xl border-4 border-white">
+            <div className="relative z-10 w-full h-[260px] sm:h-[340px] md:h-[400px] rounded-sm overflow-hidden shadow-xl border-4 border-white">
               <Image
                 src="/about_small.png"
                 alt="Students studying"

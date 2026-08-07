@@ -3,20 +3,20 @@ import React from 'react';
 export default function StatsSection() {
   const stats = [
     {
-      value: "25+",
-      description: "Total Courses offered across various disciplines to build your career."
+      value: "18+",
+      description: "Years of Excellence in providing quality education and shaping bright futures."
     },
     {
-      value: "1900+",
-      description: "Our Students currently enrolled, forming a vibrant learning community."
+      value: "3000+",
+      description: "Happy Students currently learning and growing in our nurturing environment."
     },
     {
-      value: "300+",
-      description: "Skilled Lecturers and experienced faculty members dedicated to your success."
+      value: "150+",
+      description: "Dedicated Teachers and staff committed to holistic student development."
     },
     {
-      value: "30+",
-      description: "Win Awards received by our institution for excellence in education."
+      value: "100%",
+      description: "Success Rate in board examinations, reflecting our academic rigor."
     }
   ];
 
@@ -27,10 +27,10 @@ export default function StatsSection() {
 
       <div className="max-w-7xl mx-auto flex flex-col items-center relative z-10 w-full">
         <h2 className="heading-xl text-3xl md:text-4xl lg:text-5xl text-center mb-4" style={{ color: 'var(--color-text)' }}>
-          Trusted by students all over the region
+          Trusted by parents all over the region
         </h2>
         <p className="text-[#111111]/80 font-medium text-center max-w-2xl mb-16 text-[16px] leading-relaxed">
-          We are a team of dedicated educators and professionals who are passionate about helping you build a successful and rewarding career.
+          We are a team of dedicated educators passionate about nurturing young minds and helping them build a strong foundation for a successful future.
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 w-full">

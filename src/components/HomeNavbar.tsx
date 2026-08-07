@@ -2,109 +2,214 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Montserrat } from "next/font/google";
 
 const montserrat = Montserrat({ subsets: ["latin"] });
 
+const navLinks = [
+  { name: "Home", href: "/" },
+  {
+    name: "About Us",
+    href: "/about-us",
+    subMenu: [
+      { name: "Mandatory Disclosure", href: "/about-us/mandatory-disclosure" },
+      { name: "Curriculum", href: "/about-us/curriculum" },
+    ],
+  },
+  {
+    name: "Admissions",
+    href: "/admissions",
+    subMenu: [
+      { name: "Admission Enquiry", href: "/admissions" },
+      { name: "Admission Process", href: "/admission-process" },
+    ],
+  },
+  {
+    name: "Gallery",
+    href: "/gallery",
+    subMenu: [
+      { name: "Campus", href: "/gallery/campus" },
+      { name: "Student's Corner", href: "/gallery/students-corner" },
+    ],
+  },
+  { name: "Contact Us", href: "/contact-us" },
+];
+
+const socialLinks = [
+  {
+    label: "Facebook",
+    href: "https://www.facebook.com/openmindssiwan/",
+    icon: (
+      <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" />
+      </svg>
+    ),
+  },
+  {
+    label: "Instagram",
+    href: "https://www.instagram.com/birlaheritage_siwan?igsh=dXhiYW4xanR2bmY1",
+    icon: (
+      <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
+        <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+      </svg>
+    ),
+  },
+  {
+    label: "X / Twitter",
+    href: "https://x.com/openminds_siwan",
+    icon: (
+      <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+      </svg>
+    ),
+  },
+  {
+    label: "YouTube",
+    href: "https://www.youtube.com/@openiminds_siwan/about",
+    icon: (
+      <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.5 12 3.5 12 3.5s-7.505 0-9.377.55a3.016 3.016 0 0 0-2.122 2.136C0 8.07 0 12 0 12s0 3.93.501 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.55 9.377.55 9.377.55s7.505 0 9.377-.55a3.016 3.016 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+      </svg>
+    ),
+  },
+];
+
 export default function HomeNavbar() {
   const [scrolled, setScrolled] = useState(false);
+  const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [openAccordion, setOpenAccordion] = useState<string | null>(null);
+  const sidebarRef = useRef<HTMLDivElement>(null);
 
+  // Scroll detection
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 30);
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const navLinks = [
-    { name: "Home", href: "/" },
-    { name: "About Us", href: "/about-us" },
-    {
-      name: "Admissions",
-      subMenu: [
-        { name: "Admission Enquiry", href: "/admissions" },
-        { name: "Admission Process", href: "/admission-process" },
-      ],
-    },
-    { name: "Gallery", href: "/gallery" },
-    { name: "Contact Us", href: "/contact-us" },
-  ];
+  // Lock body scroll when sidebar is open
+  useEffect(() => {
+    document.body.style.overflow = sidebarOpen ? "hidden" : "";
+    return () => { document.body.style.overflow = ""; };
+  }, [sidebarOpen]);
+
+  // Close sidebar on outside click
+  useEffect(() => {
+    const handleOutside = (e: MouseEvent) => {
+      if (sidebarOpen && sidebarRef.current && !sidebarRef.current.contains(e.target as Node)) {
+        setSidebarOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleOutside);
+    return () => document.removeEventListener("mousedown", handleOutside);
+  }, [sidebarOpen]);
+
+  const closeSidebar = () => {
+    setSidebarOpen(false);
+    setOpenAccordion(null);
+  };
 
   return (
     <>
-      {/* Top info bar */}
+      {/* ─── TOP INFO BAR ─── */}
       <div className={`absolute top-0 left-0 right-0 z-30 w-full h-10 flex overflow-hidden ${montserrat.className}`}>
-        <div className="bg-[#F9A826] px-4 md:px-8 flex items-center gap-2 md:gap-3 shrink-0">
-          <span className="text-white font-medium text-[13px] md:text-sm whitespace-nowrap hidden md:inline">Follow Us:</span>
-          <span className="text-white font-medium text-[13px] md:text-sm whitespace-nowrap md:hidden">Follow:</span>
-          <Link href="#" className="bg-[#126b59] text-white p-1 rounded-full hover:opacity-80 transition-opacity flex items-center justify-center w-6 h-6">
-            <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"/></svg>
-          </Link>
-          <Link href="#" className="bg-[#126b59] text-white p-1 rounded-full hover:opacity-80 transition-opacity flex items-center justify-center w-6 h-6">
-            <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-          </Link>
+        {/* Social Icons — hidden on very small screens */}
+        <div className="hidden sm:flex bg-[#F9A826] px-3 md:px-8 items-center gap-2 shrink-0">
+          <span className="text-white font-semibold text-[12px] whitespace-nowrap hidden md:inline">Follow Us:</span>
+          {socialLinks.map((s) => (
+            <a
+              key={s.label}
+              href={s.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={s.label}
+              className="bg-[#126b59] text-white p-1 rounded-full hover:bg-white hover:text-[#F9A826] transition-all duration-200 flex items-center justify-center w-6 h-6"
+            >
+              {s.icon}
+            </a>
+          ))}
         </div>
-        <div className="bg-[#126b59] flex-1 px-4 md:px-8 flex items-center justify-between text-white overflow-hidden">
-          <div className="flex items-center gap-4 h-full w-full overflow-hidden">
-            <Link href="#" className="text-[13px] md:text-sm font-medium hover:text-[#F9A826] whitespace-nowrap shrink-0 transition-colors">Admin Login</Link>
-            <div className="w-[1px] h-4 bg-black/40 shrink-0"></div>
-            <div className="flex-1 overflow-hidden relative flex items-center h-full">
-              <div className="whitespace-nowrap text-[13px] w-full animate-marquee inline-block">
-                Important announcement or latest news updates goes here.
-              </div>
+
+        {/* Contact & Marquee */}
+        <div className="bg-[#126b59] flex-1 px-3 md:px-8 flex items-center justify-between text-white overflow-hidden">
+          <div className="flex items-center gap-3 h-full overflow-hidden flex-1 min-w-0">
+            <a href="tel:+919122899149" className="flex items-center gap-1.5 text-[12px] md:text-sm font-medium hover:text-[#F9A826] whitespace-nowrap shrink-0 transition-colors">
+              <svg className="w-3.5 h-3.5 text-[#F9A826]" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+              </svg>
+              +91 91228 99149
+            </a>
+            <div className="w-px h-4 bg-white/30 shrink-0 hidden sm:block" />
+            <a href="mailto:info@birlaheritage.com" className="hidden md:flex items-center gap-1.5 text-[12px] md:text-sm font-medium hover:text-[#F9A826] whitespace-nowrap shrink-0 transition-colors">
+              <svg className="w-3.5 h-3.5 text-[#F9A826]" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                <polyline points="22,6 12,13 2,6" />
+              </svg>
+              info@birlaheritage.com
+            </a>
+            <div className="w-px h-4 bg-white/30 shrink-0 hidden md:block" />
+            <div className="flex-1 overflow-hidden hidden sm:flex items-center h-full min-w-0">
+              <span className="whitespace-nowrap text-[12px] animate-marquee inline-block">
+                🎓 Welcome to Birla Open Minds International School, Siwan — Admissions Open for 2025–26!
+              </span>
             </div>
           </div>
-          <div className="flex items-center gap-4 h-full pl-4 shrink-0">
-            <div className="w-[1px] h-4 bg-white/30 hidden md:block"></div>
-            <a href="tel:+919122899149" className="flex items-center gap-2 text-[13px] md:text-sm font-medium hover:text-[#F9A826] whitespace-nowrap transition-colors">
-              <svg className="w-4 h-4 text-[#F9A826]" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
-              +91 9122899149
-            </a>
-          </div>
+          <a href="tel:+917633800196" className="hidden lg:flex items-center gap-1.5 text-[12px] md:text-sm font-medium hover:text-[#F9A826] whitespace-nowrap shrink-0 ml-4 transition-colors">
+            <svg className="w-3.5 h-3.5 text-[#F9A826]" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+            </svg>
+            +91 76338 00196
+          </a>
         </div>
       </div>
 
-      {/* Main Navbar */}
+      {/* ─── MAIN NAVBAR ─── */}
       <header
         className={`fixed left-0 right-0 z-40 w-full transition-all duration-300 bg-white ${montserrat.className} ${
-          scrolled
-            ? "top-0 shadow-md py-3"
-            : "top-10 shadow-sm py-4"
+          scrolled ? "top-0 shadow-lg py-1" : "top-10 shadow-sm py-2"
         }`}
       >
-        <div className="max-w-7xl mx-auto px-4 md:px-8 flex items-center justify-between gap-6">
+        <div className="max-w-7xl mx-auto px-4 md:px-8 flex items-center justify-between gap-4">
           {/* Logo */}
-          <Link href="/" className="flex items-center no-underline shrink-0">
+          <Link href="/" className="flex items-center no-underline shrink-0" onClick={closeSidebar}>
             <Image
               src="/modern-school-logo-featuring-stylized-book-icon-symbolizing-education-learning-sleek-design-graduation-cap-315282989.webp"
               alt="Birla Heritage Siwan Logo"
               width={500}
               height={160}
-              className="h-14 md:h-16 w-auto object-contain"
+              className="h-10 md:h-12 w-auto object-contain"
               priority
             />
           </Link>
 
-          {/* Desktop Nav Links */}
-          <nav className="hidden lg:flex items-center gap-2 xl:gap-6">
+          {/* ── DESKTOP NAV ── */}
+          <nav className="hidden lg:flex items-center gap-1 xl:gap-3">
             {navLinks.map((item) =>
               item.subMenu ? (
                 <div key={item.name} className="relative group">
-                  <button className="flex items-center gap-1 px-2 py-2.5 rounded-lg text-[15px] font-semibold text-gray-800 hover:text-[#f97316] transition-colors duration-200" style={{fontFamily:'var(--font-heading)'}}>
+                  <Link
+                    href={item.href || "#"}
+                    className="flex items-center gap-1 px-3 py-2.5 rounded-lg text-[15px] font-semibold text-gray-800 hover:text-[#f97316] transition-colors duration-200 no-underline"
+                    style={{ fontFamily: "var(--font-heading)" }}
+                  >
                     {item.name}
-                    <svg className="w-4 h-4 transition-transform duration-200 group-hover:rotate-180 opacity-70" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-3.5 h-3.5 transition-transform duration-200 group-hover:rotate-180 opacity-60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M19 9l-7 7-7-7" />
                     </svg>
-                  </button>
+                  </Link>
                   {/* Dropdown */}
                   <div className="absolute top-full left-0 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 translate-y-1 group-hover:translate-y-0 z-50 min-w-[220px]">
-                    <div className="bg-white rounded-xl shadow-xl border border-gray-100 overflow-hidden py-2">
+                    <div className="bg-white rounded-xl shadow-2xl border border-gray-100 overflow-hidden py-1.5">
                       {item.subMenu.map((sub) => (
                         <Link
                           key={sub.name}
                           href={sub.href}
-                          className="flex items-center gap-3 px-5 py-3 text-[15px] font-medium text-gray-700 hover:text-[#f97316] hover:bg-orange-50 transition-all duration-150 no-underline"
+                          className="flex items-center gap-3 px-5 py-3 text-[14px] font-medium text-gray-700 hover:text-[#f97316] hover:bg-orange-50 transition-all duration-150 no-underline"
                         >
+                          <span className="w-1.5 h-1.5 rounded-full bg-[#f97316] shrink-0" />
                           {sub.name}
                         </Link>
                       ))}
@@ -113,10 +218,10 @@ export default function HomeNavbar() {
                 </div>
               ) : (
                 <Link
-                   key={item.name}
-                   href={item.href!}
-                   className="px-2 py-2.5 rounded-lg text-[15px] font-semibold text-gray-800 hover:text-[#f97316] transition-colors duration-200 no-underline"
-                   style={{fontFamily:'var(--font-heading)'}}
+                  key={item.name}
+                  href={item.href!}
+                  className="px-3 py-2.5 rounded-lg text-[15px] font-semibold text-gray-800 hover:text-[#f97316] transition-colors duration-200 no-underline"
+                  style={{ fontFamily: "var(--font-heading)" }}
                 >
                   {item.name}
                 </Link>
@@ -124,24 +229,191 @@ export default function HomeNavbar() {
             )}
           </nav>
 
-          {/* CTA Button */}
-          <div className="hidden lg:flex items-center gap-3">
-            <Link
-              href="/admissions"
-              className="btn-primary px-6 py-2.5 text-[15px] whitespace-nowrap no-underline"
-            >
-              Admissions
+          {/* Desktop CTA */}
+          <div className="hidden lg:flex items-center">
+            <Link href="/admissions" className="btn-primary px-5 py-2.5 text-[14px] font-bold whitespace-nowrap no-underline">
+              Admissions Open
             </Link>
           </div>
 
-          {/* Mobile: simple hamburger that links to a page or just shows key links */}
+          {/* ── MOBILE: CTA + HAMBURGER ── */}
           <div className="lg:hidden flex items-center gap-2">
-            <Link href="/admissions" className="btn-primary text-sm px-4 py-2 no-underline">
+            <Link href="/admissions" className="btn-primary text-[12px] px-3 py-2 no-underline font-bold whitespace-nowrap hidden sm:inline-flex">
               Admissions
             </Link>
+
+            {/* Hamburger Button */}
+            <button
+              id="mobile-menu-btn"
+              onClick={() => setSidebarOpen(!sidebarOpen)}
+              aria-label="Toggle menu"
+              aria-expanded={sidebarOpen}
+              className="relative w-11 h-11 flex flex-col items-center justify-center gap-[5px] rounded-xl bg-[#f97316] hover:bg-[#ea7216] text-white transition-all duration-200 active:scale-95 shadow-md"
+            >
+              <span
+                className={`block h-[2.5px] bg-white rounded-full transition-all duration-300 origin-center ${
+                  sidebarOpen ? "w-6 rotate-45 translate-y-[7.5px]" : "w-6"
+                }`}
+              />
+              <span
+                className={`block h-[2.5px] bg-white rounded-full transition-all duration-300 ${
+                  sidebarOpen ? "w-0 opacity-0" : "w-5"
+                }`}
+              />
+              <span
+                className={`block h-[2.5px] bg-white rounded-full transition-all duration-300 origin-center ${
+                  sidebarOpen ? "w-6 -rotate-45 -translate-y-[7.5px]" : "w-6"
+                }`}
+              />
+            </button>
           </div>
         </div>
       </header>
+
+      {/* ─── MOBILE SIDEBAR BACKDROP ─── */}
+      <div
+        onClick={closeSidebar}
+        className={`fixed inset-0 z-[49] bg-black/50 backdrop-blur-sm transition-opacity duration-300 lg:hidden ${
+          sidebarOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+        }`}
+        aria-hidden="true"
+      />
+
+      {/* ─── MOBILE SIDEBAR PANEL ─── */}
+      <div
+        ref={sidebarRef}
+        className={`fixed top-0 right-0 z-50 h-full w-[85vw] max-w-[360px] bg-white shadow-2xl flex flex-col transition-transform duration-300 ease-in-out lg:hidden ${
+          sidebarOpen ? "translate-x-0" : "translate-x-full"
+        }`}
+      >
+        {/* Sidebar Header */}
+        <div className="flex items-center justify-between px-6 py-4 bg-gradient-to-r from-[#f97316] to-[#ea580c]">
+          <Link href="/" onClick={closeSidebar} className="no-underline">
+            <Image
+              src="/modern-school-logo-featuring-stylized-book-icon-symbolizing-education-learning-sleek-design-graduation-cap-315282989.webp"
+              alt="Logo"
+              width={180}
+              height={60}
+              className="h-9 w-auto object-contain brightness-0 invert"
+            />
+          </Link>
+          <button
+            onClick={closeSidebar}
+            aria-label="Close menu"
+            className="w-9 h-9 flex items-center justify-center rounded-full bg-white/20 hover:bg-white/30 text-white transition-colors"
+          >
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+
+        {/* Nav Links */}
+        <nav className="flex-1 overflow-y-auto py-4" aria-label="Mobile navigation">
+          {navLinks.map((item) => (
+            <div key={item.name} className="border-b border-gray-100 last:border-none">
+              {item.subMenu ? (
+                <>
+                  <button
+                    onClick={() => setOpenAccordion(openAccordion === item.name ? null : item.name)}
+                    className="w-full flex items-center justify-between px-6 py-4 text-[16px] font-bold text-gray-800 hover:text-[#f97316] hover:bg-orange-50 transition-all duration-150 text-left"
+                    style={{ fontFamily: "var(--font-heading)" }}
+                  >
+                    <span>{item.name}</span>
+                    <svg
+                      className={`w-5 h-5 text-gray-400 transition-transform duration-300 ${
+                        openAccordion === item.name ? "rotate-180 text-[#f97316]" : ""
+                      }`}
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </button>
+
+                  {/* Sub links — smooth accordion */}
+                  <div
+                    className={`overflow-hidden transition-all duration-300 ease-in-out ${
+                      openAccordion === item.name ? "max-h-[300px]" : "max-h-0"
+                    }`}
+                  >
+                    <div className="bg-gray-50 py-1">
+                      {item.subMenu.map((sub) => (
+                        <Link
+                          key={sub.name}
+                          href={sub.href}
+                          onClick={closeSidebar}
+                          className="flex items-center gap-3 px-8 py-3.5 text-[14px] font-semibold text-gray-600 hover:text-[#f97316] hover:bg-orange-50 transition-all duration-150 no-underline"
+                        >
+                          <span className="w-2 h-2 rounded-full bg-[#f97316]/60 shrink-0" />
+                          {sub.name}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                </>
+              ) : (
+                <Link
+                  href={item.href!}
+                  onClick={closeSidebar}
+                  className="flex items-center px-6 py-4 text-[16px] font-bold text-gray-800 hover:text-[#f97316] hover:bg-orange-50 transition-all duration-150 no-underline"
+                  style={{ fontFamily: "var(--font-heading)" }}
+                >
+                  {item.name}
+                </Link>
+              )}
+            </div>
+          ))}
+        </nav>
+
+        {/* Sidebar Footer */}
+        <div className="px-6 py-5 border-t border-gray-100 bg-gray-50 flex flex-col gap-4">
+          <Link
+            href="/admissions"
+            onClick={closeSidebar}
+            className="btn-primary w-full text-center py-3.5 text-[15px] font-bold no-underline rounded-xl"
+          >
+            Apply for Admissions →
+          </Link>
+
+          <div className="flex flex-col gap-2">
+            <a href="tel:+919122899149" className="flex items-center gap-3 text-[13px] font-semibold text-gray-700 hover:text-[#f97316] transition-colors">
+              <div className="w-8 h-8 rounded-full bg-[#126b59]/10 flex items-center justify-center text-[#126b59] shrink-0">
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                </svg>
+              </div>
+              +91 91228 99149
+            </a>
+            <a href="mailto:info@birlaheritage.com" className="flex items-center gap-3 text-[13px] font-semibold text-gray-700 hover:text-[#f97316] transition-colors">
+              <div className="w-8 h-8 rounded-full bg-[#F9A826]/10 flex items-center justify-center text-[#F9A826] shrink-0">
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                  <polyline points="22,6 12,13 2,6" />
+                </svg>
+              </div>
+              info@birlaheritage.com
+            </a>
+          </div>
+
+          {/* Social Icons */}
+          <div className="flex items-center gap-3 pt-1">
+            {socialLinks.map((s) => (
+              <a
+                key={s.label}
+                href={s.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={s.label}
+                className="w-9 h-9 rounded-full bg-[#126b59] text-white flex items-center justify-center hover:bg-[#f97316] transition-colors duration-200"
+              >
+                {s.icon}
+              </a>
+            ))}
+          </div>
+        </div>
+      </div>
     </>
   );
 }

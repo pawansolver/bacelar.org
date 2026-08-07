@@ -44,15 +44,15 @@ function AboutHero() {
 
 function AboutIntroduction() {
   return (
-    <section className="w-full py-20 md:py-28 bg-white relative overflow-hidden">
+    <section className="w-full py-12 md:py-28 bg-white relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 md:px-8 relative z-10">
-        <div className="text-center mb-10">
-          <h2 className="heading-xl text-3xl md:text-5xl inline-block relative max-w-5xl">
+        <div className="text-center mb-8 md:mb-10">
+          <h2 className="heading-xl text-2xl sm:text-3xl md:text-5xl inline-block relative max-w-5xl">
             Birla Open Minds International School - A School that redefines education.
           </h2>
         </div>
         <div className="flex flex-col md:flex-row items-center gap-8 lg:gap-12">
-          <div className="md:w-1/2 text-[#4b5563] text-[17px] leading-relaxed font-medium text-justify">
+          <div className="w-full md:w-1/2 text-[#4b5563] text-[15px] md:text-[17px] leading-relaxed font-medium text-justify">
             <p className="mb-4">
               Birla Open Minds reiterate and restore what Tagore called the hallmarks of childhood- &apos;the Joy of Learning&apos; and the &apos;Creative Spirit&apos;. The School firmly believes in the uniqueness of each child, thereby fostering holistic development through integrated learning opportunities nurturing the 21st Century Skills.
             </p>
@@ -66,7 +66,7 @@ function AboutIntroduction() {
               A learner at Birla Open Minds develops global perspective and life skills to help and excel in his or her desired field and become a life-long learner.
             </p>
           </div>
-          <div className="md:w-1/2 relative">
+          <div className="w-full md:w-1/2 relative">
             <motion.div
               animate={{ y: [0, -20, 0] }}
               transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
@@ -96,7 +96,7 @@ function AboutIntroduction() {
             >
               <path d="M12 2v20M2 12h20" />
             </motion.svg>
-            <div className="relative z-10 w-full h-[400px] rounded-sm overflow-hidden shadow-xl border-4 border-white">
+            <div className="relative z-10 w-full h-[260px] sm:h-[340px] md:h-[400px] rounded-sm overflow-hidden shadow-xl border-4 border-white">
               <Image
                 src="/about_small.png"
                 alt="Students studying"
@@ -113,12 +113,12 @@ function AboutIntroduction() {
 
 function AboutValues() {
   return (
-    <section className="w-full py-20 md:py-24 bg-[#f8f9fa]">
+    <section className="w-full py-12 md:py-24 bg-[#f8f9fa]">
       <div className="max-w-4xl mx-auto px-4 md:px-8 text-center">
-        <h2 className="heading-xl text-3xl md:text-4xl mb-8">
+        <h2 className="heading-xl text-2xl sm:text-3xl md:text-4xl mb-6 md:mb-8">
           Values and Ethos
         </h2>
-        <div className="text-[#4b5563] text-[17px] leading-relaxed font-medium">
+        <div className="text-[#4b5563] text-[15px] md:text-[17px] leading-relaxed font-medium">
           <p className="mb-4">
             The School provides a nurturing environment wherein young children feel loved, cared, secured, respected and valued.
           </p>

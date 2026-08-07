@@ -12,24 +12,24 @@ const testimonials = [
   },
   {
     id: 2,
-    name: "Priya Patel",
-    role: "B.Sc. Student",
-    image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=200&auto=format&fit=crop",
-    text: "Amazing environment. I have the most amazing mentors at my fingertips whenever I need them - with practical coaching that addresses real issues. The campus facilities and cultural events make every single day exciting. The best decision for my future.",
+    name: "Priya Sharma",
+    role: "Mother of Class 2 Student",
+    image: "/parent_avatar_1.png",
+    text: "The dedication of the teachers here is remarkable. My daughter has grown not just academically, but also in confidence and social skills. The school's holistic approach truly makes a difference."
   },
   {
     id: 3,
-    name: "Amit Kumar",
-    role: "B.Ed. Student",
-    image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=200&auto=format&fit=crop",
-    text: "Probably the best College I have ever been to. I was initially worried about the transition, but the seniors and teachers made it so welcoming. From day one, the support system here has been phenomenal. You are always pushed to be your absolute best.",
+    name: "Rajesh Kumar",
+    role: "Father of Class 6 Student",
+    image: "/parent_avatar_2.png",
+    text: "Choosing this school was the best decision for our son. The modern facilities, combined with a strong emphasis on values, provide the perfect environment for learning."
   },
   {
     id: 4,
-    name: "Neha Singh",
-    role: "B.Com. Student",
-    image: "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?q=80&w=200&auto=format&fit=crop",
-    text: "The lectures were clear and organized. It was a sincere academic experience that felt like a real live conversation with the industry. The guest lectures and career counseling workshops gave me insights that I could never have gained from textbooks alone.",
+    name: "Anjali Gupta",
+    role: "Mother of UKG Student",
+    image: "/parent_avatar_3.png",
+    text: "I am amazed by the creative teaching methods used in the pre-primary section. My child looks forward to going to school every day, which speaks volumes about the environment."
   }
 ];
 
@@ -55,11 +55,11 @@ export default function TestimonialsSection() {
       <div className="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-20">
 
         {/* Header & Navigation */}
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-14 gap-6">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl text-[#2B2B29] max-w-2xl leading-[1.1] tracking-tight">
+        <div className="flex flex-col items-center mb-10 gap-5 text-center">
+          <h2 className="heading-xl text-3xl md:text-4xl w-full">
             Empowering thousands of students, daily
           </h2>
-          <div className="flex items-center gap-3">
+          <div className="flex justify-center items-center gap-3">
             <button
               onClick={prev}
               className="w-12 h-12 flex items-center justify-center border border-[#c8c6ba] rounded-lg bg-transparent hover:bg-black/8 active:scale-95 transition-all cursor-pointer"
