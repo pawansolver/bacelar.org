@@ -103,7 +103,7 @@ export default function CoursesSection() {
         
         {/* Header Section */}
         <div className="mb-14 max-w-2xl">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-5 tracking-tight">
+          <h2 className="heading-xl text-4xl md:text-5xl mb-5 tracking-tight" style={{color:'#ffffff'}}>
             Let's Check Our Courses
           </h2>
           <p className="text-gray-400 text-[16px] md:text-lg leading-relaxed">

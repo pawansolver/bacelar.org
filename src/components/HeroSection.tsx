@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import Navbar from "@/components/Navbar";
+import HomeNavbar from "@/components/HomeNavbar";
 import Image from "next/image";
 
 const heroSlides = [
@@ -62,9 +62,9 @@ export default function HeroSection() {
         }}
       ></div>
 
-      {/* Navbar (includes overlay menu) */}
+      {/* Navbar */}
       <div className="relative z-20">
-        <Navbar />
+        <HomeNavbar />
       </div>
 
       {/* Hero Content */}

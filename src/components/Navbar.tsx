@@ -62,12 +62,7 @@ export default function Navbar() {
 
         {/* Right Nav / Actions */}
         <div className="flex items-center gap-4">
-          <div className="hidden lg:flex items-center bg-white/10 backdrop-blur-md rounded-full px-1 border border-white/20 shadow-sm mr-4">
-            <Link href="#" className="text-white text-[15px] font-semibold px-6 py-2.5 rounded-full transition-colors hover:bg-white/15">Apply</Link>
-            <Link href="#" className="text-white text-[15px] font-semibold px-6 py-2.5 rounded-full transition-colors hover:bg-white/15">Visit</Link>
-            <Link href="#" className="text-white text-[15px] font-semibold px-6 py-2.5 rounded-full transition-colors hover:bg-white/15">Calendar</Link>
-            <Link href="#" className="text-white text-[15px] font-semibold px-6 py-2.5 rounded-full transition-colors hover:bg-white/15">Parent Zone</Link>
-          </div>
+
 
           <button
             onClick={() => setIsMenuOpen(true)}
@@ -109,13 +104,7 @@ export default function Navbar() {
           {/* Header Bar */}
           <div className="w-full px-8 md:px-12 py-8 flex flex-col">
             <div className="flex justify-between items-start">
-              {/* Links */}
-              <div className="hidden sm:flex gap-8 mt-2">
-                <Link href="#" className="text-white text-[15px] font-semibold hover:text-[#F9C301] transition-colors">Apply</Link>
-                <Link href="#" className="text-white text-[15px] font-semibold hover:text-[#F9C301] transition-colors">Visit</Link>
-                <Link href="#" className="text-white text-[15px] font-semibold hover:text-[#F9C301] transition-colors">Calendar</Link>
-                <Link href="#" className="text-white text-[15px] font-semibold hover:text-[#F9C301] transition-colors">Parent Zone</Link>
-              </div>
+
 
               {/* Close Button */}
               <button
@@ -143,56 +132,49 @@ export default function Navbar() {
           </div>
 
           {/* Main Menu Links */}
-          <div className="flex-1 px-8 md:px-12 py-8 overflow-y-auto flex flex-col gap-5 pb-32">
+          <div className="flex-1 px-8 md:px-12 py-8 overflow-y-auto flex flex-col gap-8 md:gap-10 justify-center pb-32">
             {[
-              { name: 'Home' },
-              { name: 'Academics', submenu: ['Programme', 'Academic Staff', 'Administrative Records', 'Fee Structure', 'Facilities', 'Students 2025-26', 'Academic Cal 2025-26', 'UP Praman'] },
-              { name: 'Student', submenu: ['Admission', 'Program Fee', 'Exam Form', 'Result'] },
-              { name: 'Committee' },
-              { name: 'IQAC' },
-              { name: 'Affiliation' },
-              { name: 'RTI' },
-              { name: 'Contact Us' },
-              { name: 'Library' },
-              { name: 'ITEP', submenu: ['Itep Staff Perticular', 'FDR', 'Form A', 'Mandatory Disclosure'] },
-              { name: 'NAAC', submenu: ['IIQA', 'SSR', 'AQAR 2021-22', 'AQAR 2022-23', 'AQAR 2023-24', 'NAAC Certificate', 'NAAC Quality Profile'] },
-              { name: 'NIRF', submenu: ['Department Of Science', 'Department Of Art', 'Department Of Commerce'] },
+              { name: 'Home', href: '/' },
+              { name: 'About Us', href: '/about-us' },
+              { 
+                name: 'Admissions', 
+                subMenu: [
+                  { name: 'Admission Enquiry', href: '/admissions' },
+                  { name: 'Admission Process', href: '/admission-process' }
+                ]
+              },
+              { name: 'Gallery', href: '/gallery' },
+              { name: 'Contact Us', href: '/contact-us' },
             ].map((item) => (
               <div key={item.name} className="group flex flex-col w-fit relative">
-                <Link href="#" className="flex items-center gap-2 text-white text-lg md:text-xl font-semibold tracking-wide group-hover:text-[#F9C301] transition-colors no-underline w-fit">
-                  {item.name}
-                  {item.submenu && (
-                    <svg className="w-5 h-5 stroke-[2.5px] mt-0.5 transition-transform duration-300 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-                    </svg>
-                  )}
-                </Link>
-
-                {/* Smooth expanding submenu using CSS grid transition */}
-                {item.submenu && (
-                  <div className="grid grid-rows-[0fr] group-hover:grid-rows-[1fr] transition-[grid-template-rows] duration-300 ease-in-out">
-                    <div className="overflow-hidden">
-                      <div className="flex flex-col mt-2 bg-[#1a1a1a] border-t-[3px] border-[#F9C301] shadow-lg w-max min-w-[260px] max-w-sm">
-                        {item.submenu.map((subItem, idx) => (
-                          <Link
-                            key={subItem}
-                            href="#"
-                            className={`text-white text-[16px] font-normal py-3 px-6 hover:bg-[#2a2a2a] transition-colors no-underline ${idx !== item.submenu!.length - 1 ? 'border-b border-white/10' : ''}`}
+                {item.href ? (
+                  <Link href={item.href} onClick={() => setIsMenuOpen(false)} className="flex items-center gap-2 text-white text-3xl md:text-5xl font-bold tracking-tight hover:text-[#F9C301] transition-colors no-underline w-fit">
+                    {item.name}
+                  </Link>
+                ) : (
+                  <div className="flex flex-col">
+                    <span className="flex items-center gap-2 text-white text-3xl md:text-5xl font-bold tracking-tight w-fit cursor-pointer hover:text-[#F9C301] transition-colors">
+                      {item.name}
+                      <svg className="w-5 h-5 md:w-8 md:h-8 transition-transform duration-300 group-hover:rotate-180 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </span>
+                    {item.subMenu && (
+                      <div className="flex flex-col ml-4 md:ml-8 gap-4 border-l-2 border-[#F9C301]/50 pl-6 overflow-hidden transition-all duration-500 max-h-0 opacity-0 group-hover:max-h-[500px] group-hover:opacity-100 group-hover:mt-5 group-hover:pb-2">
+                        {item.subMenu.map((subItem) => (
+                          <Link 
+                            key={subItem.name} 
+                            href={subItem.href} 
+                            onClick={() => setIsMenuOpen(false)}
+                            className="text-white/80 text-xl md:text-2xl font-semibold hover:text-[#F9C301] transition-colors transform hover:translate-x-2 duration-300"
                           >
-                            {subItem}
+                            {subItem.name}
                           </Link>
                         ))}
                       </div>
-                    </div>
+                    )}
                   </div>
                 )}
               </div>
             ))}
-
-            {/* Student Login Button */}
-            <Link href="#" className="mt-4 bg-[#F9C301] hover:bg-[#E0B001] text-[#111111] font-bold text-[17px] px-8 py-3 rounded-full transition-colors w-fit shadow-md">
-              Student Login
-            </Link>
           </div>
         </div>
       </div>

@@ -47,7 +47,7 @@ export default function EventsSection() {
   return (
     <section className="w-full py-16 px-6 md:px-12 lg:px-24 bg-white relative border-t border-gray-100">
       <div className="max-w-7xl mx-auto w-full">
-        
+
         {/* Header */}
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-14 gap-6">
           <div>
@@ -66,18 +66,18 @@ export default function EventsSection() {
 
         {/* Content Flow (SS 1 Style) */}
         <div className="flex flex-col lg:flex-row gap-6 lg:gap-8">
-          
+
           {/* Left: Featured Event */}
           <Link href="#" className="group lg:w-7/12 relative h-[400px] lg:h-[480px] rounded-none overflow-hidden block shadow-xl border border-gray-100">
-            <Image 
-              src={featuredEvent.image} 
+            <Image
+              src={featuredEvent.image}
               alt={featuredEvent.title}
               fill
               className="object-cover transition-transform duration-700 group-hover:scale-105"
             />
             {/* Gradient Overlay */}
             <div className="absolute inset-0 bg-gradient-to-t from-[#111111]/90 via-[#111111]/30 to-transparent"></div>
-            
+
             {/* Featured Content */}
             <div className="absolute bottom-0 left-0 p-8 w-full">
               {/* Event Meta */}
@@ -102,7 +102,7 @@ export default function EventsSection() {
               <h3 className="text-white text-3xl md:text-4xl font-extrabold group-hover:text-[#F9C301] transition-colors leading-tight mb-3">
                 {featuredEvent.title}
               </h3>
-              
+
               {/* Description & Action */}
               <p className="text-gray-300 text-[15px] max-w-xl mb-6 line-clamp-2">
                 {featuredEvent.description}
@@ -120,14 +120,14 @@ export default function EventsSection() {
               <Link href="#" key={event.id} className="group flex flex-col sm:flex-row gap-4 p-3 rounded-none hover:bg-gray-50 transition-colors border border-gray-100 hover:border-gray-200 shadow-sm hover:shadow-md">
                 {/* Thumbnail */}
                 <div className="w-full sm:w-32 h-48 sm:h-28 relative rounded-none overflow-hidden flex-shrink-0">
-                  <Image 
-                    src={event.image} 
+                  <Image
+                    src={event.image}
                     alt={event.title}
                     fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-500" 
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                 </div>
-                
+
                 {/* Details */}
                 <div className="flex flex-col justify-center flex-1">
                   <div className="flex flex-wrap items-center gap-3 text-[#111111]/60 text-[11.5px] font-bold mb-2 uppercase tracking-wide">
@@ -135,15 +135,15 @@ export default function EventsSection() {
                     <span className="hidden sm:inline opacity-30">•</span>
                     <span className="flex items-center gap-1"><svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>{event.time}</span>
                   </div>
-                  
+
                   <h4 className="text-[19px] font-bold text-[#111111] group-hover:text-[#F9C301] transition-colors leading-tight mb-2">
                     {event.title}
                   </h4>
-                  
+
                   <p className="text-gray-500 text-[12px] line-clamp-2 mb-2">
                     {event.description}
                   </p>
-                  
+
                   <span className="text-[#111111] font-bold text-[13px] group-hover:underline flex items-center gap-1.5 uppercase tracking-wide">
                     Read More
                     <svg className="w-3.5 h-3.5 text-[#F9C301]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M9 5l7 7-7 7"></path></svg>
@@ -152,7 +152,7 @@ export default function EventsSection() {
               </Link>
             ))}
           </div>
-          
+
         </div>
       </div>
     </section>

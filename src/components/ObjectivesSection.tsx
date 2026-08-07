@@ -71,12 +71,12 @@ const content = [
     content: (
       <div className="flex h-full w-full flex-col items-center justify-center bg-[linear-gradient(to_bottom_right,#F9C301,#E0B001)] text-black relative p-8 text-center">
         <div className="mb-6">
-            <svg className="w-16 h-16 opacity-80 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+          <svg className="w-16 h-16 opacity-80 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
         </div>
         <h3 className="text-3xl font-extrabold mb-4 text-[#111111]">Ready to make an impact?</h3>
         <p className="text-[#111111]/80 font-medium mb-8 max-w-xs">Join our community and become an educator who shapes the future.</p>
         <Link href="#" className="bg-[#111111] text-[#F9C301] px-8 py-3.5 rounded-full font-bold uppercase tracking-wider text-[13px] hover:bg-black transition-colors shadow-xl">
-            Apply Now →
+          Apply Now →
         </Link>
       </div>
     ),
@@ -87,14 +87,14 @@ export default function ObjectivesSection() {
   return (
     <section className="w-full py-24 bg-[#fffdf5] relative overflow-hidden flex flex-col items-center border-t border-black/5">
       <div className="max-w-7xl mx-auto w-full px-6 md:px-12 mb-12">
-        <h2 className="text-4xl md:text-5xl font-extrabold text-[#111111] mb-5 tracking-tight">
-          Our <span className="text-[#F9C301]">Objectives</span>
+        <h2 className="heading-xl text-4xl md:text-5xl mb-5" style={{ color: 'var(--color-text)' }}>
+          Our <span style={{ color: 'var(--color-gold)' }}>Objectives</span>
         </h2>
         <p className="text-gray-600 text-lg max-w-2xl font-medium">
           We are committed to excellence in Teacher Education, guided by clear principles and a vision to shape the future of our nation.
         </p>
       </div>
-      
+
       <div className="w-full px-4 md:px-8 max-w-[90rem]">
         <StickyScroll content={content} />
       </div>
