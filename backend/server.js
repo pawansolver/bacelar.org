@@ -1,7 +1,8 @@
 const express = require('express');
-const cors = require('cors');
-const helmet = require('helmet');
-const morgan = require('morgan');
+const path    = require('path');
+const cors    = require('cors');
+const helmet  = require('helmet');
+const morgan  = require('morgan');
 const rateLimit = require('express-rate-limit');
 
 const env = require('./config/env');
@@ -28,13 +29,22 @@ app.use(
       return callback(new Error(`CORS blocked for origin: ${origin}`));
     },
     methods: ['GET', 'POST', 'PATCH', 'DELETE', 'OPTIONS'],
-    allowedHeaders: ['Content-Type', 'x-api-key'],
+    allowedHeaders: ['Content-Type', 'x-api-key', 'authorization', 'Authorization'],
   })
 );
 
 app.use(express.json({ limit: '100kb' }));
 app.use(express.urlencoded({ extended: true, limit: '100kb' }));
 app.use(morgan(env.isDev ? 'dev' : 'combined'));
+
+// Serve uploaded gallery images
+app.use(
+  '/uploads',
+  express.static(path.join(__dirname, 'data', 'uploads'), {
+    maxAge: '7d',
+    immutable: false,
+  })
+);
 
 const limiter = rateLimit({
   windowMs: env.rateLimitWindowMs,
@@ -67,7 +77,23 @@ app.get('/', (req, res) => {
       admissionList:          'GET    /api/admissions        (x-api-key) ?status= ?grade= ?limit= ?offset=',
       admissionGet:           'GET    /api/admissions/:id    (x-api-key)',
       admissionUpdateStatus:  'PATCH  /api/admissions/:id/status (x-api-key) { status }',
-      admissionDelete:        'DELETE /api/admissions/:id    (x-api-key)',
+      admissionDelete:          'DELETE /api/admissions/:id       (x-api-key)',
+      // Gallery
+      galleryList:              'GET    /api/gallery              ?collection= &active= &limit= &offset=',
+      galleryGet:               'GET    /api/gallery/:id',
+      galleryCreate:            'POST   /api/gallery              (x-api-key) multipart: image file',
+      galleryUpdate:            'PATCH  /api/gallery/:id          (x-api-key) { title?, description?, altText?, sortOrder? }',
+      galleryToggle:            'PATCH  /api/gallery/:id/toggle   (x-api-key)',
+      galleryReorder:           'PATCH  /api/gallery/reorder      (x-api-key) { items: [{ id, sortOrder }] }',
+      galleryDelete:            'DELETE /api/gallery/:id          (x-api-key)',
+      // Announcements (Banner)
+      announcementActive:       'GET    /api/announcements/active  (public)',
+      announcementList:         'GET    /api/announcements         (x-api-key) ?active= &limit= &offset=',
+      announcementGet:          'GET    /api/announcements/:id     (x-api-key)',
+      announcementCreate:       'POST   /api/announcements         (x-api-key) { text, emoji?, linkUrl?, linkLabel?, priority?, isActive?, startsAt?, endsAt? }',
+      announcementUpdate:       'PATCH  /api/announcements/:id     (x-api-key)',
+      announcementToggle:       'PATCH  /api/announcements/:id/toggle (x-api-key)',
+      announcementDelete:       'DELETE /api/announcements/:id     (x-api-key)',
     },
     contactStatuses:   ['new', 'read', 'replied', 'archived'],
     admissionStatuses: ['new', 'under_review', 'accepted', 'rejected', 'archived'],

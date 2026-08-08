@@ -22,6 +22,7 @@ const env = {
     .map((o) => o.trim())
     .filter(Boolean),
   adminApiKey: process.env.ADMIN_API_KEY || '',
+  jwtSecret: process.env.JWT_SECRET || 'fallback-secret-change-me',
   rateLimitWindowMs: toInt(process.env.RATE_LIMIT_WINDOW_MS, 15 * 60 * 1000),
   rateLimitMax: toInt(process.env.RATE_LIMIT_MAX, 100),
   isDev: (process.env.NODE_ENV || 'development') !== 'production',

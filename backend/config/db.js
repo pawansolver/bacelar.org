@@ -83,6 +83,82 @@ function migrate() {
       ON contact_messages (created_at);
   `);
 
+  // ── Gallery Items ────────────────────────────────────────────────
+  db.run(`
+    CREATE TABLE IF NOT EXISTS gallery_items (
+      id          INTEGER PRIMARY KEY AUTOINCREMENT,
+      collection  TEXT NOT NULL CHECK(collection IN ('campus', 'students-corner')),
+      title       TEXT NOT NULL,
+      description TEXT,
+      image_path  TEXT NOT NULL,
+      alt_text    TEXT,
+      sort_order  INTEGER NOT NULL DEFAULT 0,
+      is_active   INTEGER NOT NULL DEFAULT 1,
+      created_at  TEXT NOT NULL DEFAULT (datetime('now')),
+      updated_at  TEXT NOT NULL DEFAULT (datetime('now'))
+    );
+  `);
+
+  db.run(`
+    CREATE INDEX IF NOT EXISTS idx_gallery_collection
+      ON gallery_items (collection);
+  `);
+  db.run(`
+    CREATE INDEX IF NOT EXISTS idx_gallery_sort
+      ON gallery_items (collection, sort_order);
+  `);
+  db.run(`
+    CREATE INDEX IF NOT EXISTS idx_gallery_active
+      ON gallery_items (is_active);
+  `);
+
+  // ── Announcements (Marquee Banner) ───────────────────────────────────────────
+  db.run(`
+    CREATE TABLE IF NOT EXISTS announcements (
+      id          INTEGER PRIMARY KEY AUTOINCREMENT,
+      text        TEXT NOT NULL,
+      emoji       TEXT DEFAULT NULL,
+      link_url    TEXT DEFAULT NULL,
+      link_label  TEXT DEFAULT NULL,
+      priority    INTEGER NOT NULL DEFAULT 0,
+      is_active   INTEGER NOT NULL DEFAULT 1,
+      starts_at   TEXT DEFAULT NULL,
+      ends_at     TEXT DEFAULT NULL,
+      created_at  TEXT NOT NULL DEFAULT (datetime('now')),
+      updated_at  TEXT NOT NULL DEFAULT (datetime('now'))
+    );
+  `);
+
+  db.run(`
+    CREATE INDEX IF NOT EXISTS idx_announcements_active
+      ON announcements (is_active);
+  `);
+  db.run(`
+    CREATE INDEX IF NOT EXISTS idx_announcements_priority
+      ON announcements (priority DESC);
+  `);
+
+  // ── Admin Users ───────────────────────────────────────────────────────────────
+  db.run(`
+    CREATE TABLE IF NOT EXISTS admin_users (
+      id           INTEGER PRIMARY KEY AUTOINCREMENT,
+      username     TEXT NOT NULL UNIQUE COLLATE NOCASE,
+      email        TEXT NOT NULL UNIQUE COLLATE NOCASE,
+      password_hash TEXT NOT NULL,
+      full_name    TEXT DEFAULT NULL,
+      role         TEXT NOT NULL DEFAULT 'admin',
+      is_active    INTEGER NOT NULL DEFAULT 1,
+      last_login   TEXT DEFAULT NULL,
+      created_at   TEXT NOT NULL DEFAULT (datetime('now')),
+      updated_at   TEXT NOT NULL DEFAULT (datetime('now'))
+    );
+  `);
+
+  db.run(`
+    CREATE INDEX IF NOT EXISTS idx_admin_users_username
+      ON admin_users (username);
+  `);
+
   persist();
 }
 

@@ -1,22 +1,52 @@
-const env = require('../config/env');
+const jwt = require('jsonwebtoken');
+const env  = require('../config/env');
+const AdminUser = require('../models/AdminUser');
 
+/**
+ * Accepts either:
+ *   1. A valid JWT in the Authorization: Bearer <token> header
+ *   2. A valid JWT in the x-api-key header
+ *   3. The raw ADMIN_API_KEY string (legacy / seed scripts)
+ */
 function adminAuth(req, res, next) {
-  if (!env.adminApiKey) {
-    return res.status(503).json({
-      success: false,
-      message: 'Admin API key is not configured on the server',
-    });
-  }
+  const authHeader = req.header('authorization') || '';
+  const rawKey     = req.header('x-api-key') || '';
 
-  const key = req.header('x-api-key');
-  if (!key || key !== env.adminApiKey) {
+  // Extract bearer token (from header or x-api-key)
+  const token = authHeader.startsWith('Bearer ')
+    ? authHeader.slice(7)
+    : rawKey || null;
+
+  if (!token) {
     return res.status(401).json({
       success: false,
-      message: 'Unauthorized. Provide a valid x-api-key header.',
+      message: 'Unauthorized. Provide an Authorization: Bearer <token> or x-api-key header.',
     });
   }
 
-  return next();
+  // ── 1. Try JWT verify ──────────────────────────────────────────────────────
+  try {
+    const payload = jwt.verify(token, env.jwtSecret);
+    const user    = AdminUser.findById(payload.sub);
+    if (!user || !user.isActive) {
+      return res.status(401).json({ success: false, message: 'Account not found or disabled' });
+    }
+    req.adminUser = user; // attach user to request
+    return next();
+  } catch (jwtErr) {
+    // Not a JWT — fall through to legacy key check
+  }
+
+  // ── 2. Fallback: raw ADMIN_API_KEY (legacy / Postman testing) ─────────────
+  if (env.adminApiKey && token === env.adminApiKey) {
+    req.adminUser = { id: 0, username: 'api-key-user', role: 'super_admin' };
+    return next();
+  }
+
+  return res.status(401).json({
+    success: false,
+    message: 'Unauthorized. Token invalid or expired.',
+  });
 }
 
 module.exports = adminAuth;

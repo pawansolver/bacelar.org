@@ -5,6 +5,22 @@ import Image from "next/image";
 import { useState, useEffect, useRef } from "react";
 import { Montserrat } from "next/font/google";
 
+const BACKEND_URL =
+  (typeof process !== 'undefined' && process.env.NEXT_PUBLIC_API_URL?.replace(/\/$/, '')) ||
+  'http://localhost:5000';
+
+interface Announcement {
+  id: number;
+  text: string;
+  emoji?: string;
+  linkUrl?: string;
+  linkLabel?: string;
+  priority: number;
+  isActive: number;
+}
+
+const FALLBACK_ANNOUNCEMENT = '🎓 Welcome to Birla Open Minds International School, Siwan — Admissions Open for 2025–26!';
+
 const montserrat = Montserrat({ subsets: ["latin"] });
 
 const navLinks = [
@@ -83,7 +99,30 @@ export default function HomeNavbar() {
   const [scrolled, setScrolled] = useState(false);
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [openAccordion, setOpenAccordion] = useState<string | null>(null);
+  const [announcements, setAnnouncements] = useState<Announcement[]>([]);
+  const [annIndex, setAnnIndex] = useState(0);
   const sidebarRef = useRef<HTMLDivElement>(null);
+
+  // Fetch live announcements from backend
+  useEffect(() => {
+    fetch(`${BACKEND_URL}/api/announcements/active`, { cache: 'no-store' })
+      .then(r => r.json())
+      .then(json => {
+        if (json.success && Array.isArray(json.data) && json.data.length > 0) {
+          setAnnouncements(json.data);
+        }
+      })
+      .catch(() => { /* silently use fallback */ });
+  }, []);
+
+  // Cycle through announcements every 8s if multiple exist
+  useEffect(() => {
+    if (announcements.length <= 1) return;
+    const timer = setInterval(() => {
+      setAnnIndex(i => (i + 1) % announcements.length);
+    }, 8000);
+    return () => clearInterval(timer);
+  }, [announcements]);
 
   // Scroll detection
   useEffect(() => {
@@ -154,9 +193,27 @@ export default function HomeNavbar() {
             </a>
             <div className="w-px h-4 bg-white/30 shrink-0 hidden md:block" />
             <div className="flex-1 overflow-hidden hidden sm:flex items-center h-full min-w-0">
-              <span className="whitespace-nowrap text-[12px] animate-marquee inline-block">
-                🎓 Welcome to Birla Open Minds International School, Siwan — Admissions Open for 2025–26!
-              </span>
+              {announcements.length > 0 ? (
+                <span key={annIndex} className="whitespace-nowrap text-[12px] animate-marquee inline-block">
+                  {announcements[annIndex].emoji ? `${announcements[annIndex].emoji} ` : ''}
+                  {announcements[annIndex].text}
+                  {announcements[annIndex].linkUrl && announcements[annIndex].linkLabel && (
+                    <>
+                      {' — '}
+                      <Link
+                        href={announcements[annIndex].linkUrl!}
+                        className="text-[#FDB515] font-semibold hover:underline"
+                      >
+                        {announcements[annIndex].linkLabel}
+                      </Link>
+                    </>
+                  )}
+                </span>
+              ) : (
+                <span className="whitespace-nowrap text-[12px] animate-marquee inline-block">
+                  {FALLBACK_ANNOUNCEMENT}
+                </span>
+              )}
             </div>
           </div>
           <a href="tel:+917633800196" className="hidden lg:flex items-center gap-1.5 text-[12px] md:text-sm font-medium hover:text-[#FDB515] whitespace-nowrap shrink-0 ml-4 transition-colors">
