@@ -11,8 +11,10 @@ const navLinks = [
   { name: "Home", href: "/" },
   {
     name: "About Us",
-    href: "/about-us",
+    href: "#",
     subMenu: [
+      { name: "Philosophy", href: "/about-us/philosophy" },
+      { name: "Leadership", href: "/about-us/leadership" },
       { name: "Mandatory Disclosure", href: "/about-us/mandatory-disclosure" },
       { name: "Curriculum", href: "/about-us/curriculum" },
     ],
@@ -117,7 +119,7 @@ export default function HomeNavbar() {
       {/* ─── TOP INFO BAR ─── */}
       <div className={`absolute top-0 left-0 right-0 z-30 w-full h-10 flex overflow-hidden ${montserrat.className}`}>
         {/* Social Icons — hidden on very small screens */}
-        <div className="hidden sm:flex bg-[#F9A826] px-3 md:px-8 items-center gap-2 shrink-0">
+        <div className="hidden sm:flex bg-[#FDB515] px-3 md:px-8 items-center gap-2 shrink-0">
           <span className="text-white font-semibold text-[12px] whitespace-nowrap hidden md:inline">Follow Us:</span>
           {socialLinks.map((s) => (
             <a
@@ -126,7 +128,7 @@ export default function HomeNavbar() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label={s.label}
-              className="bg-[#126b59] text-white p-1 rounded-full hover:bg-white hover:text-[#F9A826] transition-all duration-200 flex items-center justify-center w-6 h-6"
+              className="bg-[#003262] text-white p-1 rounded-full hover:bg-white hover:text-[#FDB515] transition-all duration-200 flex items-center justify-center w-6 h-6"
             >
               {s.icon}
             </a>
@@ -134,17 +136,17 @@ export default function HomeNavbar() {
         </div>
 
         {/* Contact & Marquee */}
-        <div className="bg-[#126b59] flex-1 px-3 md:px-8 flex items-center justify-between text-white overflow-hidden">
+        <div className="bg-[#003262] flex-1 px-3 md:px-8 flex items-center justify-between text-white overflow-hidden">
           <div className="flex items-center gap-3 h-full overflow-hidden flex-1 min-w-0">
-            <a href="tel:+919122899149" className="flex items-center gap-1.5 text-[12px] md:text-sm font-medium hover:text-[#F9A826] whitespace-nowrap shrink-0 transition-colors">
-              <svg className="w-3.5 h-3.5 text-[#F9A826]" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+            <a href="tel:+919122899149" className="flex items-center gap-1.5 text-[12px] md:text-sm font-medium hover:text-[#FDB515] whitespace-nowrap shrink-0 transition-colors">
+              <svg className="w-3.5 h-3.5 text-[#FDB515]" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
               </svg>
               +91 91228 99149
             </a>
             <div className="w-px h-4 bg-white/30 shrink-0 hidden sm:block" />
-            <a href="mailto:info@birlaheritage.com" className="hidden md:flex items-center gap-1.5 text-[12px] md:text-sm font-medium hover:text-[#F9A826] whitespace-nowrap shrink-0 transition-colors">
-              <svg className="w-3.5 h-3.5 text-[#F9A826]" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
+            <a href="mailto:info@birlaheritage.com" className="hidden md:flex items-center gap-1.5 text-[12px] md:text-sm font-medium hover:text-[#FDB515] whitespace-nowrap shrink-0 transition-colors">
+              <svg className="w-3.5 h-3.5 text-[#FDB515]" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
                 <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
                 <polyline points="22,6 12,13 2,6" />
               </svg>
@@ -157,8 +159,8 @@ export default function HomeNavbar() {
               </span>
             </div>
           </div>
-          <a href="tel:+917633800196" className="hidden lg:flex items-center gap-1.5 text-[12px] md:text-sm font-medium hover:text-[#F9A826] whitespace-nowrap shrink-0 ml-4 transition-colors">
-            <svg className="w-3.5 h-3.5 text-[#F9A826]" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+          <a href="tel:+917633800196" className="hidden lg:flex items-center gap-1.5 text-[12px] md:text-sm font-medium hover:text-[#FDB515] whitespace-nowrap shrink-0 ml-4 transition-colors">
+            <svg className="w-3.5 h-3.5 text-[#FDB515]" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
             </svg>
             +91 76338 00196
@@ -168,9 +170,8 @@ export default function HomeNavbar() {
 
       {/* ─── MAIN NAVBAR ─── */}
       <header
-        className={`fixed left-0 right-0 z-40 w-full transition-all duration-300 bg-white ${montserrat.className} ${
-          scrolled ? "top-0 shadow-lg py-1" : "top-10 shadow-sm py-2"
-        }`}
+        className={`fixed left-0 right-0 z-40 w-full transition-all duration-300 bg-[#003262] border-b-[4px] border-[#FDB515] ${montserrat.className} ${scrolled ? "top-0 shadow-lg" : "top-10 shadow-sm"
+          }`}
       >
         <div className="max-w-7xl mx-auto px-4 md:px-8 flex items-center justify-between gap-4">
           {/* Logo */}
@@ -186,13 +187,13 @@ export default function HomeNavbar() {
           </Link>
 
           {/* ── DESKTOP NAV ── */}
-          <nav className="hidden lg:flex items-center gap-1 xl:gap-3">
+          <nav className="hidden lg:flex items-stretch self-stretch border-l border-white/20">
             {navLinks.map((item) =>
               item.subMenu ? (
-                <div key={item.name} className="relative group">
+                <div key={item.name} className="relative group flex items-stretch">
                   <Link
                     href={item.href || "#"}
-                    className="flex items-center gap-1 px-3 py-2.5 rounded-lg text-[15px] font-semibold text-gray-800 hover:text-[#f97316] transition-colors duration-200 no-underline"
+                    className="flex items-center gap-1 px-4 lg:px-5 py-4 text-[15px] font-semibold text-white hover:bg-[#FDB515] hover:text-white transition-colors duration-200 no-underline border-r border-white/20"
                     style={{ fontFamily: "var(--font-heading)" }}
                   >
                     {item.name}
@@ -201,15 +202,14 @@ export default function HomeNavbar() {
                     </svg>
                   </Link>
                   {/* Dropdown */}
-                  <div className="absolute top-full left-0 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 translate-y-1 group-hover:translate-y-0 z-50 min-w-[220px]">
-                    <div className="bg-white rounded-xl shadow-2xl border border-gray-100 overflow-hidden py-1.5">
+                  <div className="absolute top-[100%] left-0 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 min-w-[240px]">
+                    <div className="bg-[#003262] shadow-2xl border-t-0 border border-[#FDB515] overflow-hidden rounded-b-md">
                       {item.subMenu.map((sub) => (
                         <Link
                           key={sub.name}
                           href={sub.href}
-                          className="flex items-center gap-3 px-5 py-3 text-[14px] font-medium text-gray-700 hover:text-[#f97316] hover:bg-orange-50 transition-all duration-150 no-underline"
+                          className="block px-5 py-3.5 text-[14.5px] font-medium text-white hover:bg-[#FDB515] hover:text-white border-b border-white/20 last:border-b-0 transition-all duration-150 no-underline"
                         >
-                          <span className="w-1.5 h-1.5 rounded-full bg-[#f97316] shrink-0" />
                           {sub.name}
                         </Link>
                       ))}
@@ -220,7 +220,7 @@ export default function HomeNavbar() {
                 <Link
                   key={item.name}
                   href={item.href!}
-                  className="px-3 py-2.5 rounded-lg text-[15px] font-semibold text-gray-800 hover:text-[#f97316] transition-colors duration-200 no-underline"
+                  className="flex items-center px-4 lg:px-5 py-4 text-[15px] font-semibold text-white hover:bg-[#FDB515] hover:text-white transition-colors duration-200 no-underline border-r border-white/20"
                   style={{ fontFamily: "var(--font-heading)" }}
                 >
                   {item.name}
@@ -248,22 +248,19 @@ export default function HomeNavbar() {
               onClick={() => setSidebarOpen(!sidebarOpen)}
               aria-label="Toggle menu"
               aria-expanded={sidebarOpen}
-              className="relative w-11 h-11 flex flex-col items-center justify-center gap-[5px] rounded-xl bg-[#f97316] hover:bg-[#ea7216] text-white transition-all duration-200 active:scale-95 shadow-md"
+              className="relative w-11 h-11 flex flex-col items-center justify-center gap-[5px] rounded-xl bg-white/10 hover:bg-white/20 text-white transition-all duration-200 active:scale-95"
             >
               <span
-                className={`block h-[2.5px] bg-white rounded-full transition-all duration-300 origin-center ${
-                  sidebarOpen ? "w-6 rotate-45 translate-y-[7.5px]" : "w-6"
-                }`}
+                className={`block h-[2.5px] bg-white rounded-full transition-all duration-300 origin-center ${sidebarOpen ? "w-6 rotate-45 translate-y-[7.5px]" : "w-6"
+                  }`}
               />
               <span
-                className={`block h-[2.5px] bg-white rounded-full transition-all duration-300 ${
-                  sidebarOpen ? "w-0 opacity-0" : "w-5"
-                }`}
+                className={`block h-[2.5px] bg-white rounded-full transition-all duration-300 ${sidebarOpen ? "w-0 opacity-0" : "w-5"
+                  }`}
               />
               <span
-                className={`block h-[2.5px] bg-white rounded-full transition-all duration-300 origin-center ${
-                  sidebarOpen ? "w-6 -rotate-45 -translate-y-[7.5px]" : "w-6"
-                }`}
+                className={`block h-[2.5px] bg-white rounded-full transition-all duration-300 origin-center ${sidebarOpen ? "w-6 -rotate-45 -translate-y-[7.5px]" : "w-6"
+                  }`}
               />
             </button>
           </div>
@@ -273,21 +270,19 @@ export default function HomeNavbar() {
       {/* ─── MOBILE SIDEBAR BACKDROP ─── */}
       <div
         onClick={closeSidebar}
-        className={`fixed inset-0 z-[49] bg-black/50 backdrop-blur-sm transition-opacity duration-300 lg:hidden ${
-          sidebarOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
-        }`}
+        className={`fixed inset-0 z-[49] bg-black/50 backdrop-blur-sm transition-opacity duration-300 lg:hidden ${sidebarOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+          }`}
         aria-hidden="true"
       />
 
       {/* ─── MOBILE SIDEBAR PANEL ─── */}
       <div
         ref={sidebarRef}
-        className={`fixed top-0 right-0 z-50 h-full w-[85vw] max-w-[360px] bg-white shadow-2xl flex flex-col transition-transform duration-300 ease-in-out lg:hidden ${
-          sidebarOpen ? "translate-x-0" : "translate-x-full"
-        }`}
+        className={`fixed top-0 right-0 z-50 h-full w-[85vw] max-w-[360px] bg-white shadow-2xl flex flex-col transition-transform duration-300 ease-in-out lg:hidden ${sidebarOpen ? "translate-x-0" : "translate-x-full"
+          }`}
       >
         {/* Sidebar Header */}
-        <div className="flex items-center justify-between px-6 py-4 bg-gradient-to-r from-[#f97316] to-[#ea580c]">
+        <div className="flex items-center justify-between px-6 py-4 bg-gradient-to-r from-[#FDB515] to-[#ea580c]">
           <Link href="/" onClick={closeSidebar} className="no-underline">
             <Image
               src="/modern-school-logo-featuring-stylized-book-icon-symbolizing-education-learning-sleek-design-graduation-cap-315282989.webp"
@@ -316,14 +311,13 @@ export default function HomeNavbar() {
                 <>
                   <button
                     onClick={() => setOpenAccordion(openAccordion === item.name ? null : item.name)}
-                    className="w-full flex items-center justify-between px-6 py-4 text-[16px] font-bold text-gray-800 hover:text-[#f97316] hover:bg-orange-50 transition-all duration-150 text-left"
+                    className="w-full flex items-center justify-between px-6 py-4 text-[16px] font-bold text-gray-800 hover:text-[#FDB515] hover:bg-orange-50 transition-all duration-150 text-left"
                     style={{ fontFamily: "var(--font-heading)" }}
                   >
                     <span>{item.name}</span>
                     <svg
-                      className={`w-5 h-5 text-gray-400 transition-transform duration-300 ${
-                        openAccordion === item.name ? "rotate-180 text-[#f97316]" : ""
-                      }`}
+                      className={`w-5 h-5 text-gray-400 transition-transform duration-300 ${openAccordion === item.name ? "rotate-180 text-[#FDB515]" : ""
+                        }`}
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -334,9 +328,8 @@ export default function HomeNavbar() {
 
                   {/* Sub links — smooth accordion */}
                   <div
-                    className={`overflow-hidden transition-all duration-300 ease-in-out ${
-                      openAccordion === item.name ? "max-h-[300px]" : "max-h-0"
-                    }`}
+                    className={`overflow-hidden transition-all duration-300 ease-in-out ${openAccordion === item.name ? "max-h-[300px]" : "max-h-0"
+                      }`}
                   >
                     <div className="bg-gray-50 py-1">
                       {item.subMenu.map((sub) => (
@@ -344,9 +337,9 @@ export default function HomeNavbar() {
                           key={sub.name}
                           href={sub.href}
                           onClick={closeSidebar}
-                          className="flex items-center gap-3 px-8 py-3.5 text-[14px] font-semibold text-gray-600 hover:text-[#f97316] hover:bg-orange-50 transition-all duration-150 no-underline"
+                          className="flex items-center gap-3 px-8 py-3.5 text-[14px] font-semibold text-gray-600 hover:text-[#FDB515] hover:bg-orange-50 transition-all duration-150 no-underline"
                         >
-                          <span className="w-2 h-2 rounded-full bg-[#f97316]/60 shrink-0" />
+                          <span className="w-2 h-2 rounded-full bg-[#FDB515]/60 shrink-0" />
                           {sub.name}
                         </Link>
                       ))}
@@ -357,7 +350,7 @@ export default function HomeNavbar() {
                 <Link
                   href={item.href!}
                   onClick={closeSidebar}
-                  className="flex items-center px-6 py-4 text-[16px] font-bold text-gray-800 hover:text-[#f97316] hover:bg-orange-50 transition-all duration-150 no-underline"
+                  className="flex items-center px-6 py-4 text-[16px] font-bold text-gray-800 hover:text-[#FDB515] hover:bg-orange-50 transition-all duration-150 no-underline"
                   style={{ fontFamily: "var(--font-heading)" }}
                 >
                   {item.name}
@@ -378,16 +371,16 @@ export default function HomeNavbar() {
           </Link>
 
           <div className="flex flex-col gap-2">
-            <a href="tel:+919122899149" className="flex items-center gap-3 text-[13px] font-semibold text-gray-700 hover:text-[#f97316] transition-colors">
-              <div className="w-8 h-8 rounded-full bg-[#126b59]/10 flex items-center justify-center text-[#126b59] shrink-0">
+            <a href="tel:+919122899149" className="flex items-center gap-3 text-[13px] font-semibold text-gray-700 hover:text-[#FDB515] transition-colors">
+              <div className="w-8 h-8 rounded-full bg-[#003262]/10 flex items-center justify-center text-[#003262] shrink-0">
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                 </svg>
               </div>
               +91 91228 99149
             </a>
-            <a href="mailto:info@birlaheritage.com" className="flex items-center gap-3 text-[13px] font-semibold text-gray-700 hover:text-[#f97316] transition-colors">
-              <div className="w-8 h-8 rounded-full bg-[#F9A826]/10 flex items-center justify-center text-[#F9A826] shrink-0">
+            <a href="mailto:info@birlaheritage.com" className="flex items-center gap-3 text-[13px] font-semibold text-gray-700 hover:text-[#FDB515] transition-colors">
+              <div className="w-8 h-8 rounded-full bg-[#FDB515]/10 flex items-center justify-center text-[#FDB515] shrink-0">
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
                   <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
                   <polyline points="22,6 12,13 2,6" />
@@ -406,7 +399,7 @@ export default function HomeNavbar() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={s.label}
-                className="w-9 h-9 rounded-full bg-[#126b59] text-white flex items-center justify-center hover:bg-[#f97316] transition-colors duration-200"
+                className="w-9 h-9 rounded-full bg-[#003262] text-white flex items-center justify-center hover:bg-[#FDB515] transition-colors duration-200"
               >
                 {s.icon}
               </a>

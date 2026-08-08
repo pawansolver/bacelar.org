@@ -34,20 +34,20 @@ export function HoverBorderGradient({
         Starts at top-left (approx 315deg) and rotates to create a smooth moving light effect 
       */}
       <div 
-        className="absolute inset-[-150%] z-0 animate-[spin_4s_linear_infinite] bg-[conic-gradient(from_315deg_at_50%_50%,rgba(249,115,22,0)_70%,#f97316_100%)]"
+        className="absolute inset-[-150%] z-0 animate-[spin_4s_linear_infinite] bg-[conic-gradient(from_315deg_at_50%_50%,rgba(249,115,22,0)_70%,#FDB515_100%)]"
         style={{ animationDuration: `${duration}s` }}
       />
       
       {/* Ambient Blurred Glow Layer (spins with the main layer) */}
       <div 
-        className="absolute inset-[-150%] z-0 animate-[spin_4s_linear_infinite] opacity-100 blur-[14px] bg-[conic-gradient(from_315deg_at_50%_50%,rgba(249,115,22,0)_70%,#f97316_100%)]"
+        className="absolute inset-[-150%] z-0 animate-[spin_4s_linear_infinite] opacity-100 blur-[14px] bg-[conic-gradient(from_315deg_at_50%_50%,rgba(249,115,22,0)_70%,#FDB515_100%)]"
         style={{ animationDuration: `${duration}s` }}
       />
 
       {/* Hover State: Solid Glow transition */}
       <div 
         className={cn(
-          "absolute inset-0 z-0 bg-[#f97316] transition-opacity duration-500",
+          "absolute inset-0 z-0 bg-[#FDB515] transition-opacity duration-500",
           hovered ? "opacity-100" : "opacity-0"
         )}
       />

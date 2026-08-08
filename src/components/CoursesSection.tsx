@@ -125,7 +125,7 @@ export default function CoursesSection() {
         {/* Courses Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5 lg:gap-6">
           {courses.map((course) => (
-            <Link href="#" key={course.id} className="group flex flex-col bg-white rounded-none overflow-hidden border border-black/10 hover:border-[#F9A826]/60 transition-all duration-300 hover:-translate-y-1 shadow-md hover:shadow-xl">
+            <Link href="#" key={course.id} className="group flex flex-col bg-white rounded-none overflow-hidden border border-black/10 hover:border-[#FDB515]/60 transition-all duration-300 hover:-translate-y-1 shadow-md hover:shadow-xl">
               
               {/* Image Section */}
               <div className="relative w-full h-[180px] overflow-hidden bg-gray-100">
@@ -154,7 +154,7 @@ export default function CoursesSection() {
                 </div>
 
                 {/* Title */}
-                <h3 className="text-lg md:text-xl font-bold text-[#111] mb-2 group-hover:text-[#F9A826] transition-colors leading-tight">
+                <h3 className="text-lg md:text-xl font-bold text-[#111] mb-2 group-hover:text-[#FDB515] transition-colors leading-tight">
                   {course.title}
                 </h3>
 

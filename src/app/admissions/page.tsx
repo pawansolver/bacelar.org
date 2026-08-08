@@ -84,26 +84,16 @@ export default function AdmissionsPage() {
             alt="Students smiling"
             priority
           />
-          <div className="absolute inset-0 bg-orange-900/10"></div>
+          <div className="absolute inset-0 bg-[#003262]/20"></div>
         </div>
 
         {/* Teal Bottom Bar */}
-        <div className="relative z-10 w-full bg-[#489196]/95 backdrop-blur-sm py-4 md:py-6 flex items-center justify-center shadow-lg">
+        <div className="relative z-10 w-full bg-[#003262]/95 backdrop-blur-sm py-4 md:py-6 flex items-center justify-center shadow-lg">
           <h1 className="text-white text-3xl md:text-4xl font-bold tracking-wide">
             Admissions Enquiry
           </h1>
         </div>
 
-        {/* Floating Contact Tab (Right edge) */}
-        <div className="fixed right-0 top-1/2 -translate-y-1/2 z-50">
-          <a
-            href="/contact-us"
-            className="bg-[#de5c6c] hover:bg-[#c94555] transition-colors text-white font-bold text-xs tracking-widest py-4 px-2 rounded-l-md shadow-md flex items-center justify-center"
-            style={{ writingMode: "vertical-rl", transform: "rotate(180deg)" }}
-          >
-            CONTACT
-          </a>
-        </div>
       </section>
 
       {/* Form Section */}
@@ -123,7 +113,7 @@ export default function AdmissionsPage() {
           </div>
 
           <div className="w-full bg-white rounded-md p-8 md:p-12 shadow-2xl border border-gray-100">
-            <h2 className="text-3xl md:text-4xl font-normal text-[#cc0000] mb-8 pb-4 border-b-2 border-[#cc0000]">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#003262] mb-8 pb-4 border-b-2 border-[#FDB515]">
               Enquiry Form
             </h2>
 
@@ -131,29 +121,29 @@ export default function AdmissionsPage() {
               {/* Row 1 */}
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <div className="flex flex-col gap-2">
-                  <label className="text-[#c45b2d] text-[13px] font-medium">Student First Name *</label>
-                  <input name="studentFirstName" value={form.studentFirstName} onChange={onChange} type="text" className="w-full bg-[#fffcf9] border border-[#c45b2d] text-[#c45b2d] focus:outline-none focus:ring-1 focus:ring-[#c45b2d] py-2.5 px-3 rounded-none" required />
+                  <label className="text-gray-700 text-[13px] font-medium">Student First Name *</label>
+                  <input name="studentFirstName" value={form.studentFirstName} onChange={onChange} type="text" className="w-full bg-gray-50 border border-gray-300 text-gray-700 focus:outline-none focus:ring-1 focus:ring-[#003262] py-2.5 px-3 rounded-none" required />
                 </div>
                 <div className="flex flex-col gap-2">
-                  <label className="text-[#c45b2d] text-[13px] font-medium">Student Last Name</label>
-                  <input name="studentLastName" value={form.studentLastName} onChange={onChange} type="text" className="w-full bg-[#fffcf9] border border-[#c45b2d] text-[#c45b2d] focus:outline-none focus:ring-1 focus:ring-[#c45b2d] py-2.5 px-3 rounded-none" />
+                  <label className="text-gray-700 text-[13px] font-medium">Student Last Name</label>
+                  <input name="studentLastName" value={form.studentLastName} onChange={onChange} type="text" className="w-full bg-gray-50 border border-gray-300 text-gray-700 focus:outline-none focus:ring-1 focus:ring-[#003262] py-2.5 px-3 rounded-none" />
                 </div>
                 <div className="flex flex-col gap-2">
-                  <label className="text-[#c45b2d] text-[13px] font-medium">Student DOB *</label>
-                  <input name="studentDob" value={form.studentDob} onChange={onChange} type="date" max={new Date().toISOString().split("T")[0]} className="w-full bg-[#fffcf9] border border-[#c45b2d] text-[#c45b2d] focus:outline-none focus:ring-1 focus:ring-[#c45b2d] py-2.5 px-3 rounded-none" required />
+                  <label className="text-gray-700 text-[13px] font-medium">Student DOB *</label>
+                  <input name="studentDob" value={form.studentDob} onChange={onChange} type="date" max={new Date().toISOString().split("T")[0]} className="w-full bg-gray-50 border border-gray-300 text-gray-700 focus:outline-none focus:ring-1 focus:ring-[#003262] py-2.5 px-3 rounded-none" required />
                 </div>
               </div>
 
               {/* Row 2 */}
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <div className="flex flex-col gap-2">
-                  <label className="text-[#c45b2d] text-[13px] font-medium">Student aadhaar number *</label>
-                  <input name="studentAadhaar" value={form.studentAadhaar} onChange={onChange} type="text" placeholder="xxxx xxxx xxxx" className="w-full bg-[#fffcf9] border border-[#c45b2d] text-[#c45b2d] placeholder-[#c45b2d]/70 focus:outline-none focus:ring-1 focus:ring-[#c45b2d] py-2.5 px-3 rounded-none" required />
+                  <label className="text-gray-700 text-[13px] font-medium">Student aadhaar number *</label>
+                  <input name="studentAadhaar" value={form.studentAadhaar} onChange={onChange} type="text" placeholder="xxxx xxxx xxxx" className="w-full bg-gray-50 border border-gray-300 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-[#003262] py-2.5 px-3 rounded-none" required />
                 </div>
                 <div className="flex flex-col gap-2">
-                  <label className="text-[#c45b2d] text-[13px] font-medium">Grade *</label>
+                  <label className="text-gray-700 text-[13px] font-medium">Grade *</label>
                   <div className="relative">
-                    <select name="grade" value={form.grade} onChange={onChange} className={`w-full bg-[#fffcf9] border text-[#c45b2d] focus:outline-none focus:ring-1 focus:ring-[#c45b2d] py-2.5 px-3 rounded-none appearance-none ${fieldErrors.grade ? 'border-red-500' : 'border-[#c45b2d]'}`} required>
+                    <select name="grade" value={form.grade} onChange={onChange} className={`w-full bg-gray-50 border text-gray-700 focus:outline-none focus:ring-1 focus:ring-[#003262] py-2.5 px-3 rounded-none appearance-none ${fieldErrors.grade ? 'border-red-500' : 'border-gray-300'}`} required>
                       <option value="" disabled hidden>Select Class</option>
                       <option value="nursery">Nursery</option>
                       <option value="lkg">L.K.G</option>
@@ -171,67 +161,67 @@ export default function AdmissionsPage() {
                       <option value="11">Class 11</option>
                       <option value="12">Class 12</option>
                     </select>
-                    <svg className="w-4 h-4 absolute right-3 top-3.5 pointer-events-none text-[#c45b2d]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M19 9l-7 7-7-7"></path></svg>
+                    <svg className="w-4 h-4 absolute right-3 top-3.5 pointer-events-none text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M19 9l-7 7-7-7"></path></svg>
                   </div>
                   {fieldErrors.grade && <span className="text-red-500 text-[11px]">{fieldErrors.grade}</span>}
                 </div>
                 <div className="flex flex-col gap-2">
-                  <label className="text-[#c45b2d] text-[13px] font-medium">Parent/Guardian Name *</label>
-                  <input name="parentGuardianName" value={form.parentGuardianName} onChange={onChange} type="text" className="w-full bg-[#fffcf9] border border-[#c45b2d] text-[#c45b2d] focus:outline-none focus:ring-1 focus:ring-[#c45b2d] py-2.5 px-3 rounded-none" required />
+                  <label className="text-gray-700 text-[13px] font-medium">Parent/Guardian Name *</label>
+                  <input name="parentGuardianName" value={form.parentGuardianName} onChange={onChange} type="text" className="w-full bg-gray-50 border border-gray-300 text-gray-700 focus:outline-none focus:ring-1 focus:ring-[#003262] py-2.5 px-3 rounded-none" required />
                 </div>
               </div>
 
               {/* Row 3 */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="flex flex-col gap-2">
-                  <label className="text-[#c45b2d] text-[13px] font-medium">Phone *</label>
-                  <input name="phone" value={form.phone} onChange={onChange} type="tel" placeholder="Phone" className="w-full bg-[#fffcf9] border border-[#c45b2d] text-[#c45b2d] placeholder-[#c45b2d]/70 focus:outline-none focus:ring-1 focus:ring-[#c45b2d] py-2.5 px-3 rounded-none" required />
+                  <label className="text-gray-700 text-[13px] font-medium">Phone *</label>
+                  <input name="phone" value={form.phone} onChange={onChange} type="tel" placeholder="Phone" className="w-full bg-gray-50 border border-gray-300 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-[#003262] py-2.5 px-3 rounded-none" required />
                 </div>
                 <div className="flex flex-col gap-2">
-                  <label className="text-[#c45b2d] text-[13px] font-medium">Email *</label>
-                  <input name="email" value={form.email} onChange={onChange} type="email" className="w-full bg-[#fffcf9] border border-[#c45b2d] text-[#c45b2d] focus:outline-none focus:ring-1 focus:ring-[#c45b2d] py-2.5 px-3 rounded-none" required />
+                  <label className="text-gray-700 text-[13px] font-medium">Email *</label>
+                  <input name="email" value={form.email} onChange={onChange} type="email" className="w-full bg-gray-50 border border-gray-300 text-gray-700 focus:outline-none focus:ring-1 focus:ring-[#003262] py-2.5 px-3 rounded-none" required />
                 </div>
               </div>
 
               {/* Row 4 */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="flex flex-col gap-2">
-                  <label className="text-[#c45b2d] text-[13px] font-medium">Street Address *</label>
-                  <input name="streetAddress" value={form.streetAddress} onChange={onChange} type="text" placeholder="Street Address" className="w-full bg-[#fffcf9] border border-[#c45b2d] text-[#c45b2d] placeholder-[#c45b2d]/70 focus:outline-none focus:ring-1 focus:ring-[#c45b2d] py-2.5 px-3 rounded-none" required />
+                  <label className="text-gray-700 text-[13px] font-medium">Street Address *</label>
+                  <input name="streetAddress" value={form.streetAddress} onChange={onChange} type="text" placeholder="Street Address" className="w-full bg-gray-50 border border-gray-300 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-[#003262] py-2.5 px-3 rounded-none" required />
                 </div>
                 <div className="flex flex-col gap-2">
-                  <label className="text-[#c45b2d] text-[13px] font-medium">Street Address Line 2 *</label>
-                  <input name="streetAddressLine2" value={form.streetAddressLine2} onChange={onChange} type="text" placeholder="Street Address Line 2" className="w-full bg-[#fffcf9] border border-[#c45b2d] text-[#c45b2d] placeholder-[#c45b2d]/70 focus:outline-none focus:ring-1 focus:ring-[#c45b2d] py-2.5 px-3 rounded-none" required />
+                  <label className="text-gray-700 text-[13px] font-medium">Street Address Line 2 *</label>
+                  <input name="streetAddressLine2" value={form.streetAddressLine2} onChange={onChange} type="text" placeholder="Street Address Line 2" className="w-full bg-gray-50 border border-gray-300 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-[#003262] py-2.5 px-3 rounded-none" required />
                 </div>
               </div>
 
               {/* Row 5 */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="flex flex-col gap-2">
-                  <label className="text-[#c45b2d] text-[13px] font-medium">City *</label>
-                  <input name="city" value={form.city} onChange={onChange} type="text" placeholder="City" className="w-full bg-[#fffcf9] border border-[#c45b2d] text-[#c45b2d] placeholder-[#c45b2d]/70 focus:outline-none focus:ring-1 focus:ring-[#c45b2d] py-2.5 px-3 rounded-none" required />
+                  <label className="text-gray-700 text-[13px] font-medium">City *</label>
+                  <input name="city" value={form.city} onChange={onChange} type="text" placeholder="City" className="w-full bg-gray-50 border border-gray-300 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-[#003262] py-2.5 px-3 rounded-none" required />
                 </div>
                 <div className="flex flex-col gap-2">
-                  <label className="text-[#c45b2d] text-[13px] font-medium">State *</label>
-                  <input name="state" value={form.state} onChange={onChange} type="text" placeholder="State" className="w-full bg-[#fffcf9] border border-[#c45b2d] text-[#c45b2d] placeholder-[#c45b2d]/70 focus:outline-none focus:ring-1 focus:ring-[#c45b2d] py-2.5 px-3 rounded-none" required />
+                  <label className="text-gray-700 text-[13px] font-medium">State *</label>
+                  <input name="state" value={form.state} onChange={onChange} type="text" placeholder="State" className="w-full bg-gray-50 border border-gray-300 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-[#003262] py-2.5 px-3 rounded-none" required />
                 </div>
               </div>
 
               {/* Row 6 */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="flex flex-col gap-2">
-                  <label className="text-[#c45b2d] text-[13px] font-medium">Pin Code *</label>
-                  <input name="pinCode" value={form.pinCode} onChange={onChange} type="text" placeholder="Pin Code" className="w-full bg-[#fffcf9] border border-[#c45b2d] text-[#c45b2d] placeholder-[#c45b2d]/70 focus:outline-none focus:ring-1 focus:ring-[#c45b2d] py-2.5 px-3 rounded-none" required />
+                  <label className="text-gray-700 text-[13px] font-medium">Pin Code *</label>
+                  <input name="pinCode" value={form.pinCode} onChange={onChange} type="text" placeholder="Pin Code" className="w-full bg-gray-50 border border-gray-300 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-[#003262] py-2.5 px-3 rounded-none" required />
                 </div>
                 <div className="flex flex-col gap-2">
-                  <label className="text-[#c45b2d] text-[13px] font-medium">Country *</label>
+                  <label className="text-gray-700 text-[13px] font-medium">Country *</label>
                   <div className="relative">
-                    <select name="country" value={form.country} onChange={onChange} className="w-full bg-[#fffcf9] border border-[#c45b2d] text-[#c45b2d] placeholder-[#c45b2d]/70 focus:outline-none focus:ring-1 focus:ring-[#c45b2d] py-2.5 px-3 rounded-none appearance-none" required>
+                    <select name="country" value={form.country} onChange={onChange} className="w-full bg-gray-50 border border-gray-300 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-[#003262] py-2.5 px-3 rounded-none appearance-none" required>
                       <option value="" disabled hidden>Country</option>
                       <option value="india">India</option>
                       <option value="other">Other</option>
                     </select>
-                    <svg className="w-4 h-4 absolute right-3 top-3.5 pointer-events-none text-[#c45b2d]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M19 9l-7 7-7-7"></path></svg>
+                    <svg className="w-4 h-4 absolute right-3 top-3.5 pointer-events-none text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M19 9l-7 7-7-7"></path></svg>
                   </div>
                 </div>
               </div>
@@ -253,7 +243,7 @@ export default function AdmissionsPage() {
                 <button
                   type="submit"
                   disabled={submitting}
-                  className="bg-[#cc0000] hover:bg-[#a00000] disabled:opacity-60 text-white text-lg py-3 px-8 transition-colors duration-300"
+                  className="bg-[#003262] hover:bg-[#002855] disabled:opacity-60 text-white font-bold text-lg py-3 px-8 transition-colors duration-300 rounded-sm"
                 >
                   {submitting ? "Submitting..." : "Submit Form >"}
                 </button>
@@ -272,8 +262,8 @@ export default function AdmissionsPage() {
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {/* Welcome Card */}
-            <div className="bg-white border border-gray-200 border-t-4 border-t-[#f97316] p-8 md:p-10 shadow-sm flex flex-col gap-4">
-              <h3 className="text-xl md:text-2xl font-bold text-[#312e81] mb-2">
+            <div className="bg-white border border-gray-200 border-t-4 border-t-[#FDB515] p-8 md:p-10 shadow-sm flex flex-col gap-4">
+              <h3 className="text-xl md:text-2xl font-bold text-[#003262] mb-2">
                 Welcome to Birla Heritage International School Siwan!
               </h3>
               <p className="text-gray-700 leading-relaxed text-[15px]">
@@ -291,18 +281,18 @@ export default function AdmissionsPage() {
             </div>
 
             {/* Contact Card */}
-            <div className="bg-white border border-gray-200 border-t-4 border-t-[#f97316] p-8 md:p-10 shadow-sm flex flex-col">
-              <h3 className="text-xl md:text-2xl font-bold text-[#312e81] mb-6">
+            <div className="bg-white border border-gray-200 border-t-4 border-t-[#FDB515] p-8 md:p-10 shadow-sm flex flex-col">
+              <h3 className="text-xl md:text-2xl font-bold text-[#003262] mb-6">
                 Contact Us Details
               </h3>
               <div className="flex flex-col gap-6">
                 <div>
-                  <h4 className="font-semibold text-[#312e81] mb-2">Phone number</h4>
+                  <h4 className="font-semibold text-[#003262] mb-2">Phone number</h4>
                   <p className="text-gray-700 text-[15px]">+91 9122899149</p>
                   <p className="text-gray-700 text-[15px]">+91 7633800196</p>
                 </div>
                 <div>
-                  <h4 className="font-semibold text-[#312e81] mb-2">Address</h4>
+                  <h4 className="font-semibold text-[#003262] mb-2">Address</h4>
                   <p className="text-gray-700 text-[15px] leading-relaxed">
                     Survey No 813 - 817 Markan, Near Andar Dhala, Siwan, Bihar - 841226
                   </p>

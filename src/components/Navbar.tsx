@@ -12,33 +12,33 @@ export default function Navbar() {
       {/* --- TOP HEADER BAR --- */}
       <div className="absolute top-0 left-0 right-0 z-30 w-full h-10 flex overflow-hidden font-sans">
         {/* Left Orange Section */}
-        <div className="bg-[#F9A826] px-4 md:px-8 flex items-center gap-2 md:gap-3 shrink-0">
+        <div className="bg-[#FDB515] px-4 md:px-8 flex items-center gap-2 md:gap-3 shrink-0">
           <span className="text-white font-medium text-[13px] md:text-sm whitespace-nowrap hidden md:inline">Follow Us:</span>
           <span className="text-white font-medium text-[13px] md:text-sm whitespace-nowrap md:hidden">Follow:</span>
-          <a href="https://www.facebook.com/openmindssiwan/" target="_blank" rel="noopener noreferrer" className="bg-[#126b59] text-white p-1 rounded-full hover:opacity-80 transition-opacity flex items-center justify-center w-6 h-6">
+          <a href="https://www.facebook.com/openmindssiwan/" target="_blank" rel="noopener noreferrer" className="bg-[#003262] text-white p-1 rounded-full hover:opacity-80 transition-opacity flex items-center justify-center w-6 h-6">
             <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"/></svg>
           </a>
-          <a href="https://www.instagram.com/birlaheritage_siwan?igsh=dXhiYW4xanR2bmY1" target="_blank" rel="noopener noreferrer" className="bg-[#126b59] text-white p-1 rounded-full hover:opacity-80 transition-opacity flex items-center justify-center w-6 h-6">
+          <a href="https://www.instagram.com/birlaheritage_siwan?igsh=dXhiYW4xanR2bmY1" target="_blank" rel="noopener noreferrer" className="bg-[#003262] text-white p-1 rounded-full hover:opacity-80 transition-opacity flex items-center justify-center w-6 h-6">
             <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
           </a>
-          <a href="https://x.com/openminds_siwan" target="_blank" rel="noopener noreferrer" className="bg-[#126b59] text-white p-1 rounded-full hover:opacity-80 transition-opacity flex items-center justify-center w-6 h-6">
+          <a href="https://x.com/openminds_siwan" target="_blank" rel="noopener noreferrer" className="bg-[#003262] text-white p-1 rounded-full hover:opacity-80 transition-opacity flex items-center justify-center w-6 h-6">
             <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
           </a>
-          <a href="https://www.youtube.com/@openiminds_siwan/about" target="_blank" rel="noopener noreferrer" className="bg-[#126b59] text-white p-1 rounded-full hover:opacity-80 transition-opacity flex items-center justify-center w-6 h-6">
+          <a href="https://www.youtube.com/@openiminds_siwan/about" target="_blank" rel="noopener noreferrer" className="bg-[#003262] text-white p-1 rounded-full hover:opacity-80 transition-opacity flex items-center justify-center w-6 h-6">
             <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.5 12 3.5 12 3.5s-7.505 0-9.377.55a3.016 3.016 0 0 0-2.122 2.136C0 8.07 0 12 0 12s0 3.93.501 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.55 9.377.55 9.377.55s7.505 0 9.377-.55a3.016 3.016 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
           </a>
         </div>
 
         {/* Right Green Section */}
-        <div className="bg-[#126b59] flex-1 px-4 md:px-8 flex items-center justify-between text-white overflow-hidden">
+        <div className="bg-[#003262] flex-1 px-4 md:px-8 flex items-center justify-between text-white overflow-hidden">
           <div className="flex items-center gap-4 h-full w-full overflow-hidden">
-            <a href="tel:+919122899149" className="flex items-center gap-2 text-[13px] md:text-sm font-medium hover:text-[#F9A826] whitespace-nowrap shrink-0 transition-colors">
-              <svg className="w-4 h-4 text-[#F9A826]" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+            <a href="tel:+919122899149" className="flex items-center gap-2 text-[13px] md:text-sm font-medium hover:text-[#FDB515] whitespace-nowrap shrink-0 transition-colors">
+              <svg className="w-4 h-4 text-[#FDB515]" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
               +91 9122899149
             </a>
             <div className="w-[1px] h-4 bg-white/40 shrink-0"></div>
-            <a href="mailto:info@birlaheritage.com" className="hidden md:flex items-center gap-2 text-[13px] md:text-sm font-medium hover:text-[#F9A826] whitespace-nowrap shrink-0 transition-colors">
-              <svg className="w-4 h-4 text-[#F9A826]" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+            <a href="mailto:info@birlaheritage.com" className="hidden md:flex items-center gap-2 text-[13px] md:text-sm font-medium hover:text-[#FDB515] whitespace-nowrap shrink-0 transition-colors">
+              <svg className="w-4 h-4 text-[#FDB515]" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
               info@birlaheritage.com
             </a>
             <div className="hidden md:block w-[1px] h-4 bg-white/40 shrink-0"></div>
@@ -51,10 +51,10 @@ export default function Navbar() {
             </div>
           </div>
           
-          <div className="flex items-center gap-4 h-full pl-4 shrink-0 bg-[#126b59] z-10 relative">
+          <div className="flex items-center gap-4 h-full pl-4 shrink-0 bg-[#003262] z-10 relative">
             <div className="w-[1px] h-4 bg-white/30 hidden md:block"></div>
-            <a href="tel:+917633800196" className="flex items-center gap-2 text-[13px] md:text-sm font-medium hover:text-[#F9A826] whitespace-nowrap transition-colors">
-              <svg className="w-4 h-4 text-[#F9A826]" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+            <a href="tel:+917633800196" className="flex items-center gap-2 text-[13px] md:text-sm font-medium hover:text-[#FDB515] whitespace-nowrap transition-colors">
+              <svg className="w-4 h-4 text-[#FDB515]" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
               +91 7633800196
             </a>
           </div>
@@ -151,8 +151,10 @@ export default function Navbar() {
               { name: 'Home', href: '/' },
               { 
                 name: 'About Us', 
-                href: '/about-us',
+                href: '#',
                 subMenu: [
+                  { name: "Philosophy", href: "/about-us/philosophy" },
+                  { name: "Leadership", href: "/about-us/leadership" },
                   { name: "Mandatory Disclosure", href: "/about-us/mandatory-disclosure" },
                   { name: "Curriculum", href: "/about-us/curriculum" },
                 ]

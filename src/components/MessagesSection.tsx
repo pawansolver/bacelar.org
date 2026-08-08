@@ -62,7 +62,7 @@ export default function MessagesSection() {
 
         {/* Header Section */}
         <div className="mb-12 text-center flex flex-col items-center">
-          <p className="section-eyebrow mb-2 uppercase tracking-widest text-[#F9A826] font-bold text-[13px]">Leadership</p>
+          <p className="section-eyebrow mb-2 uppercase tracking-widest text-[#FDB515] font-bold text-[13px]">Leadership</p>
           <h2 className="text-3xl md:text-4xl font-light text-gray-900 tracking-tight" style={{ fontFamily: 'var(--font-heading)' }}>
             Messages from our Leaders
           </h2>
@@ -73,10 +73,10 @@ export default function MessagesSection() {
           {messages.map((msg) => (
             <div
               key={msg.id}
-              className="bg-white rounded-none p-8 md:p-10 shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col relative border border-gray-200 hover:border-[#F9A826]/50 group"
+              className="bg-white rounded-none p-8 md:p-10 shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col relative border border-gray-200 hover:border-[#FDB515]/50 group"
             >
               {/* Decorative Quote Icon */}
-              <div className="absolute top-8 right-8 text-[#F9A826] opacity-10 group-hover:opacity-20 transition-opacity">
+              <div className="absolute top-8 right-8 text-[#FDB515] opacity-10 group-hover:opacity-20 transition-opacity">
                 <svg className="w-16 h-16" fill="currentColor" viewBox="0 0 32 32">
                   <path d="M10.733 13.067h-3.467c-.533 0-1.067-.533-1.067-1.067s.533-1.067 1.067-1.067h3.467c1.733 0 3.2-1.467 3.2-3.2s-1.467-3.2-3.2-3.2h-3.467c-3.467 0-6.4 2.933-6.4 6.4v7.467c0 3.467 2.933 6.4 6.4 6.4h3.467c.533 0 1.067-.533 1.067-1.067s-.533-1.067-1.067-1.067zm17.067 0h-3.467c-.533 0-1.067-.533-1.067-1.067s.533-1.067 1.067-1.067h3.467c1.733 0 3.2-1.467 3.2-3.2s-1.467-3.2-3.2-3.2h-3.467c-3.467 0-6.4 2.933-6.4 6.4v7.467c0 3.467 2.933 6.4 6.4 6.4h3.467c.533 0 1.067-.533 1.067-1.067s-.533-1.067-1.067-1.067z"></path>
                 </svg>
@@ -98,12 +98,12 @@ export default function MessagesSection() {
 
               {/* Author Footer (Greeting Card Style) */}
               <div className="mt-auto pt-6 border-t border-gray-100 flex items-center gap-4 relative z-10">
-                <div className="w-16 h-16 rounded-full bg-gray-50 border-2 border-[#F9A826]/20 flex items-center justify-center overflow-hidden shrink-0">
+                <div className="w-16 h-16 rounded-full bg-gray-50 border-2 border-[#FDB515]/20 flex items-center justify-center overflow-hidden shrink-0">
                   <PlaceholderIcon gender={msg.gender} />
                 </div>
                 <div>
                   <h4 className="font-bold text-gray-900 text-[15px]">{msg.name}</h4>
-                  <p className="text-[#F9A826] text-[11px] font-bold uppercase tracking-wider mt-0.5">{msg.role}</p>
+                  <p className="text-[#FDB515] text-[11px] font-bold uppercase tracking-wider mt-0.5">{msg.role}</p>
                 </div>
               </div>
 

@@ -4,25 +4,25 @@
    GLOBAL DESIGN TOKENS — Birla Heritage Siwan
    ============================================ */
 :root {
-  /* Brand Colors */
-  --color-primary: #312e81;
-  /* Deep Indigo — headings, links, accents */
-  --color-primary-light: #4338ca;
-  /* Lighter Indigo — hover states */
-  --color-primary-dark: #1e1b4b;
-  /* Dark Indigo — deep sections */
+  /* ── Brand Colors: Berkeley Blue + California Gold ── */
+  --color-primary: #003262;
+  /* Berkeley Blue — headings, navbars, main UI */
+  --color-primary-light: #0a4d96;
+  /* Lighter Blue — hover states */
+  --color-primary-dark: #001f3d;
+  /* Dark Blue — deep sections */
 
-  --color-accent: #f97316;
-  /* Vibrant Orange — CTAs, highlights */
-  --color-accent-hover: #ea580c;
-  /* Deep Orange — hover on CTAs */
-  --color-accent-light: #fff7ed;
-  /* Pale orange — soft backgrounds */
+  --color-accent: #FDB515;
+  /* California Gold — CTAs, highlights, icons */
+  --color-accent-hover: #e5a010;
+  /* Deep Gold — hover on CTAs */
+  --color-accent-light: #fff8e6;
+  /* Pale gold — soft backgrounds */
 
-  --color-secondary: #126b59;
-  /* Forest Green — top bar, badges */
-  --color-gold: #F9A826;
-  /* Gold — top bar, tags */
+  --color-secondary: #003262;
+  /* Berkeley Blue — top bar, badges (same as primary) */
+  --color-gold: #FDB515;
+  /* California Gold — top bar, tags */
 
   /* Neutrals */
   --color-bg: #ffffff;
@@ -179,7 +179,7 @@ h6 {
 
 .btn-primary:hover {
   background-color: var(--color-accent-hover);
-  box-shadow: 0 4px 16px rgba(249, 115, 22, 0.3);
+  box-shadow: 0 4px 16px rgba(253, 181, 21, 0.4);
 }
 
 .btn-outline-primary {

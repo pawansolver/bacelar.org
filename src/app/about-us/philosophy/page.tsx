@@ -15,7 +15,7 @@ function AboutHero() {
           src="/about_main.png"
           fill
           className="object-cover object-center scale-105 animate-[pulse_20s_ease-in-out_infinite]"
-          alt="About Us Banner"
+          alt="Philosophy Banner"
           priority
           unoptimized
         />
@@ -25,13 +25,13 @@ function AboutHero() {
       {/* Hero Content */}
       <div className="relative z-10 w-full max-w-7xl mx-auto px-4 md:px-8 text-center md:text-left">
         <div className="inline-block mb-4 px-4 py-1.5 bg-[#FDB515]/20 backdrop-blur-md border border-[#FDB515]/30 rounded-full">
-          <span className="text-[#FDB515] font-semibold tracking-wider text-sm uppercase">Discover Our Story</span>
+          <span className="text-[#FDB515] font-semibold tracking-wider text-sm uppercase">Our Core Beliefs</span>
         </div>
         <h1 className="text-white text-5xl md:text-7xl font-bold tracking-tight mb-4 drop-shadow-xl" style={{ fontFamily: 'var(--font-heading)' }}>
-          About Us
+          Philosophy
         </h1>
         <p className="text-white/80 text-lg md:text-xl max-w-2xl font-light">
-          A School that redefines education through joyful learning and holistic development.
+          A constructive approach where learners are actively involved in a self-governing environment.
         </p>
       </div>
 
@@ -395,7 +395,7 @@ function AboutTeam() {
   );
 }
 
-export default function AboutUsPage() {
+export default function PhilosophyPage() {
   return (
     <main className="min-h-screen flex flex-col bg-white">
       <HomeNavbar />

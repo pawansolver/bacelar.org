@@ -66,7 +66,7 @@ export default function ObjectivesSection() {
                   <button
                     onClick={() => setActiveId(item.id)}
                     className={`w-full text-left py-4 text-[18px] md:text-[22px] font-bold transition-all duration-300 ${
-                      isActive ? 'text-gray-900' : 'text-gray-400 hover:text-gray-600'
+                      isActive ? 'text-[#003262]' : 'text-gray-400 hover:text-gray-600'
                     }`}
                   >
                     {item.title}
@@ -91,15 +91,15 @@ export default function ObjectivesSection() {
           <div className="w-full lg:w-1/2 flex items-center justify-center min-h-[300px] lg:min-h-full">
             <div className="w-full h-full min-h-[300px] md:min-h-[400px] lg:min-h-[450px] relative rounded-lg overflow-hidden shadow-md">
               {activeItem.isCta ? (
-                <div className="flex h-full w-full flex-col items-center justify-center bg-[#eab308] text-black relative p-6 text-center absolute inset-0">
+                <div className="flex h-full w-full flex-col items-center justify-center bg-[#FDB515] text-[#003262] relative p-6 text-center absolute inset-0">
                   <div className="mb-4">
-                    <svg className="w-14 h-14 mx-auto text-[#111]" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.5">
+                    <svg className="w-14 h-14 mx-auto text-[#003262]" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.5">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
                     </svg>
                   </div>
-                  <h3 className="text-3xl font-extrabold mb-3 text-[#111]">Admissions Open</h3>
-                  <p className="text-[#111]/90 font-medium mb-6 max-w-sm">Enroll your child today at Birla Open Minds International School.</p>
-                  <Link href="/admissions" className="bg-[#111] text-[#eab308] px-8 py-3 rounded-full font-bold uppercase tracking-wider text-[14px] hover:bg-black transition-colors flex items-center gap-2">
+                  <h3 className="text-3xl font-extrabold mb-3 text-[#003262]">Admissions Open</h3>
+                  <p className="text-[#003262]/90 font-medium mb-6 max-w-sm">Enroll your child today at Birla Open Minds International School.</p>
+                  <Link href="/admissions" className="bg-[#003262] text-[#FDB515] px-8 py-3 rounded-full font-bold uppercase tracking-wider text-[14px] hover:bg-[#001f3d] transition-colors flex items-center gap-2">
                     APPLY NOW <span className="text-lg leading-none">&rarr;</span>
                   </Link>
                 </div>

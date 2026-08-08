@@ -10,36 +10,36 @@ export default function CurriculumPage() {
       <HomeNavbar />
 
       {/* Hero Section */}
-      <section className="relative w-full h-[350px] md:h-[500px] mt-[120px] flex flex-col justify-end">
+      <section className="relative w-full h-[400px] md:h-[550px] mt-[100px] flex flex-col justify-center items-center overflow-hidden">
+        {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <Image
             src="/about_main.png"
             fill
-            className="object-cover object-center"
+            className="object-cover object-center scale-105 animate-[pulse_20s_ease-in-out_infinite]"
             alt="Curriculum Banner"
             priority
             unoptimized
           />
-          <div className="absolute inset-0 bg-orange-900/10"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-[#111111]/90 via-[#111111]/70 to-[#003262]/40 mix-blend-multiply"></div>
         </div>
 
-        {/* Teal Bottom Bar */}
-        <div className="relative z-10 w-full bg-[#489196]/95 backdrop-blur-sm py-4 md:py-6 flex items-center justify-center shadow-lg">
-          <h1 className="text-white text-3xl md:text-4xl font-bold tracking-wide">
+        {/* Hero Content */}
+        <div className="relative z-10 w-full max-w-7xl mx-auto px-4 md:px-8 text-center md:text-left">
+          <div className="inline-block mb-4 px-4 py-1.5 bg-[#FDB515]/20 backdrop-blur-md border border-[#FDB515]/30 rounded-full">
+            <span className="text-[#FDB515] font-semibold tracking-wider text-sm uppercase">Academic Excellence</span>
+          </div>
+          <h1 className="text-white text-5xl md:text-7xl font-bold tracking-tight mb-4 drop-shadow-xl" style={{ fontFamily: 'var(--font-heading)' }}>
             Curriculum
           </h1>
+          <p className="text-white/80 text-lg md:text-xl max-w-2xl font-light">
+            A comprehensive curriculum designed to nurture 21st century skills and holistic development.
+          </p>
         </div>
-        
-        {/* Floating Contact Tab */}
-        <div className="fixed right-0 top-1/2 -translate-y-1/2 z-50">
-          <a
-            href="/contact-us"
-            className="bg-[#de5c6c] hover:bg-[#c94555] transition-colors text-white font-bold text-xs tracking-widest py-4 px-2 rounded-l-md shadow-md flex items-center justify-center"
-            style={{ writingMode: "vertical-rl", transform: "rotate(180deg)" }}
-          >
-            CONTACT
-          </a>
-        </div>
+
+        {/* Decorative Bottom Wave/Curve */}
+        <div className="absolute bottom-0 w-full h-24 bg-gradient-to-t from-white to-transparent z-20"></div>
+
       </section>
 
       {/* Section 1: Welcome to BOMIS */}
@@ -50,7 +50,7 @@ export default function CurriculumPage() {
             Welcome to BOMIS
           </h2>
         </div>
-          <div className="bg-[#fff0f3] p-8 md:p-12 shadow-sm border border-[#ffe3e8]">
+          <div className="bg-[#f8f9fa] p-8 md:p-12 shadow-sm border-l-4 border-[#FDB515] border-y border-r border-gray-100">
             <div className="text-gray-700 text-base md:text-lg leading-relaxed flex flex-col gap-4 text-justify font-medium">
               <p>
                 Birla Open Minds International School - CBSE School (BOMIS), offers a comprehensive solution for education that envelops the individual's learning period right from the formative early years to K-12 schooling.
@@ -77,7 +77,7 @@ export default function CurriculumPage() {
             CBSE
           </h2>
         </div>
-          <div className="bg-[#fff0f3] p-8 md:p-12 shadow-sm border border-[#ffe3e8]">
+          <div className="bg-[#f8f9fa] p-8 md:p-12 shadow-sm border-l-4 border-[#FDB515] border-y border-r border-gray-100">
             <div className="text-gray-700 text-base md:text-lg leading-relaxed text-justify font-medium">
               <p>
                 Welcome to Birla Open Minds International School, Siwan, a school for CBSE students. Our programs are designed to enhance the academic and personal development of our students. We provide a supportive and stimulating environment for students to learn and grow. We offer a wide range of programs to meet the needs and interests of our students. Our programs include academic subjects such as Math, Science, and English, as well as extracurricular activities such as sports, music, and art. Our experienced and dedicated teachers work closely with our students to help them achieve their full potential.

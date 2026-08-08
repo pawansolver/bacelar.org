@@ -37,7 +37,7 @@ export default function About() {
             <motion.svg
               animate={{ x: [0, 15, 0] }}
               transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute -bottom-10 -left-10 w-32 h-32 text-[#312e81] opacity-20 z-0 hidden md:block" fill="none" viewBox="0 0 100 100"
+              className="absolute -bottom-10 -left-10 w-32 h-32 text-[#003262] opacity-20 z-0 hidden md:block" fill="none" viewBox="0 0 100 100"
             >
               <pattern id="lines" x="0" y="0" width="10" height="10" patternUnits="userSpaceOnUse">
                 <line x1="0" y1="0" x2="0" y2="10" stroke="currentColor" strokeWidth="2" />
@@ -47,14 +47,14 @@ export default function About() {
             <motion.svg
               animate={{ rotate: 360, y: [0, -10, 0] }}
               transition={{ rotate: { duration: 20, repeat: Infinity, ease: "linear" }, y: { duration: 4, repeat: Infinity, ease: "easeInOut" } }}
-              className="absolute top-1/2 -left-20 w-12 h-12 text-[#312e81] z-0 hidden md:block origin-center" viewBox="0 0 24 24" fill="currentColor"
+              className="absolute top-1/2 -left-20 w-12 h-12 text-[#003262] z-0 hidden md:block origin-center" viewBox="0 0 24 24" fill="currentColor"
             >
               <path d="M24 12L0 24V0L24 12Z" />
             </motion.svg>
             <motion.svg
               animate={{ rotate: -360, scale: [1, 1.1, 1] }}
               transition={{ rotate: { duration: 15, repeat: Infinity, ease: "linear" }, scale: { duration: 3, repeat: Infinity, ease: "easeInOut" } }}
-              className="absolute -top-10 right-10 w-12 h-12 text-[#312e81] z-0 origin-center" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3"
+              className="absolute -top-10 right-10 w-12 h-12 text-[#003262] z-0 origin-center" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3"
             >
               <path d="M12 2v20M2 12h20" />
             </motion.svg>

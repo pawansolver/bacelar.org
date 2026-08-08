@@ -60,18 +60,18 @@ function FaqItem({ question, answer }: { question: string, answer: string }) {
       layout
       onClick={() => setIsOpen(!isOpen)}
       className={`rounded-2xl border transition-all duration-300 cursor-pointer overflow-hidden ${isOpen
-          ? "border-[#f97316] bg-orange-50/40 shadow-[0_4px_20px_-4px_rgba(249,115,22,0.15)]"
+          ? "border-[#FDB515] bg-[#f8f9fa] shadow-[0_4px_20px_-4px_rgba(253,181,21,0.2)]"
           : "border-gray-200 bg-white hover:border-gray-300 hover:shadow-md"
         }`}
     >
       <div className="p-5 md:p-6 flex items-center justify-between gap-4">
-        <h3 className={`text-base md:text-[17px] font-bold transition-colors duration-300 ${isOpen ? "text-[#f97316]" : "text-gray-900 group-hover:text-[#312e81]"}`}>
+        <h3 className={`text-base md:text-[17px] font-bold transition-colors duration-300 ${isOpen ? "text-[#FDB515]" : "text-gray-900 group-hover:text-[#003262]"}`}>
           {question}
         </h3>
         <motion.div
           animate={{ rotate: isOpen ? 180 : 0 }}
           transition={{ duration: 0.4, ease: "backInOut" }}
-          className={`flex-shrink-0 w-8 h-8 md:w-10 md:h-10 flex items-center justify-center rounded-full transition-colors duration-300 ${isOpen ? "bg-[#f97316] text-white" : "bg-gray-100 text-gray-500"
+          className={`flex-shrink-0 w-8 h-8 md:w-10 md:h-10 flex items-center justify-center rounded-full transition-colors duration-300 ${isOpen ? "bg-[#FDB515] text-white" : "bg-gray-100 text-gray-500"
             }`}
         >
           <svg className="w-5 h-5 md:w-6 md:h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -117,26 +117,16 @@ export default function AdmissionProcessPage() {
             priority
           />
           {/* Optional overlay to make it look a bit warmer like the reference image */}
-          <div className="absolute inset-0 bg-orange-900/10"></div>
+          <div className="absolute inset-0 bg-[#003262]/20"></div>
         </div>
 
         {/* Teal Bottom Bar */}
-        <div className="relative z-10 w-full bg-[#489196]/95 backdrop-blur-sm py-4 md:py-6 flex items-center justify-center shadow-lg">
+        <div className="relative z-10 w-full bg-[#003262]/95 backdrop-blur-sm py-4 md:py-6 flex items-center justify-center shadow-lg">
           <h1 className="text-white text-3xl md:text-4xl font-bold tracking-wide">
             Admissions Process
           </h1>
         </div>
 
-        {/* Floating Contact Tab (Right edge) */}
-        <div className="fixed right-0 top-1/2 -translate-y-1/2 z-50">
-          <a
-            href="/contact-us"
-            className="bg-[#de5c6c] hover:bg-[#c94555] transition-colors text-white font-bold text-xs tracking-widest py-4 px-2 rounded-l-md shadow-md flex items-center justify-center"
-            style={{ writingMode: "vertical-rl", transform: "rotate(180deg)" }}
-          >
-            CONTACT
-          </a>
-        </div>
       </section>
 
       {/* Process Steps Section */}
@@ -149,7 +139,7 @@ export default function AdmissionProcessPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-16">
             {steps.map((step, idx) => (
               <div key={idx} className="flex flex-col items-center text-center group">
-                <span className="text-8xl md:text-[140px] font-black text-[#7EBAA1] leading-none mb-4 transition-transform duration-300 group-hover:scale-110 drop-shadow-sm">
+                <span className="text-8xl md:text-[140px] font-black text-[#FDB515] leading-none mb-4 transition-all duration-300 group-hover:scale-110 drop-shadow-sm group-hover:text-[#111111]">
                   {step.number}
                 </span>
                 <h3 className="heading-md text-xl md:text-2xl mb-3">
