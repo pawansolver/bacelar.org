@@ -47,7 +47,7 @@ export default function ObjectivesSection() {
         {/* Header Section */}
         <div className="mb-12 text-center flex flex-col items-center">
           <h2 className="heading-xl text-3xl md:text-4xl mb-4 font-light text-gray-900 tracking-tight" style={{ fontFamily: 'var(--font-heading)' }}>
-            Birla Open Minds Advantage
+            Birla Heritage International School siwan Advantage
           </h2>
           <p className="text-gray-600 text-[15px] md:text-[16px] max-w-2xl font-light">
             We are committed to providing a nurturing environment that fosters the holistic development of every child, guided by the rich Birla heritage.
@@ -98,7 +98,7 @@ export default function ObjectivesSection() {
                     </svg>
                   </div>
                   <h3 className="text-3xl font-extrabold mb-3 text-[#003262]">Admissions Open</h3>
-                  <p className="text-[#003262]/90 font-medium mb-6 max-w-sm">Enroll your child today at Birla Open Minds International School.</p>
+                  <p className="text-[#003262]/90 font-medium mb-6 max-w-sm">Enroll your child today at Birla Heritage International School siwan.</p>
                   <Link href="/admissions" className="bg-[#003262] text-[#FDB515] px-8 py-3 rounded-full font-bold uppercase tracking-wider text-[14px] hover:bg-[#001f3d] transition-colors flex items-center gap-2">
                     APPLY NOW <span className="text-lg leading-none">&rarr;</span>
                   </Link>

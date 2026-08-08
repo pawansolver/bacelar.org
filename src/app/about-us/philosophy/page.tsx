@@ -48,13 +48,13 @@ function AboutIntroduction() {
       <div className="max-w-7xl mx-auto px-4 md:px-8 relative z-10">
         <div className="text-center mb-8 md:mb-10">
           <h2 className="heading-xl text-2xl sm:text-3xl md:text-5xl inline-block relative max-w-5xl">
-            Birla Open Minds International School - A School that redefines education.
+            Birla Heritage International School siwan - A School that redefines education.
           </h2>
         </div>
         <div className="flex flex-col md:flex-row items-center gap-8 lg:gap-12">
           <div className="w-full md:w-1/2 text-[#4b5563] text-[15px] md:text-[17px] leading-relaxed font-medium text-justify">
             <p className="mb-4">
-              Birla Open Minds reiterate and restore what Tagore called the hallmarks of childhood- &apos;the Joy of Learning&apos; and the &apos;Creative Spirit&apos;. The School firmly believes in the uniqueness of each child, thereby fostering holistic development through integrated learning opportunities nurturing the 21st Century Skills.
+              Birla Heritage International School siwan reiterate and restore what Tagore called the hallmarks of childhood- &apos;the Joy of Learning&apos; and the &apos;Creative Spirit&apos;. The School firmly believes in the uniqueness of each child, thereby fostering holistic development through integrated learning opportunities nurturing the 21st Century Skills.
             </p>
             <p className="mb-4">
               Our philosophy is based on the constructive approach where the learners are actively involved in their learning in a self-governing environment. Learning experiences are interactive, student-centric and progress from known to unknown, concrete to abstract and local to global.
@@ -63,7 +63,7 @@ function AboutIntroduction() {
               The teachers are aware of each student&apos;s emotional, social, psychological and physical development as well as their cognitive growth. They provide a motivational framework for each learning opportunity.
             </p>
             <p>
-              A learner at Birla Open Minds develops global perspective and life skills to help and excel in his or her desired field and become a life-long learner.
+              A learner at Birla Heritage International School siwan develops global perspective and life skills to help and excel in his or her desired field and become a life-long learner.
             </p>
           </div>
           <div className="w-full md:w-1/2 relative">
@@ -334,14 +334,14 @@ function AboutTeam() {
       name: "Nitya Singh",
       title: "Chairman's Message",
       image: "/chairman_placeholder.jpeg",
-      bio: "Education is the manifestation of perfection already in man, as Swami Vivekananda once said. At Birla Open Minds International School Siwan, we have taken it upon ourselves to unlock this latent perfection and talent in every child under our care.\n\nNitya Singh is a software professional with 16 years of experience in Microsoft, one of the world's leading technology companies. She has a post-graduate degree in Computer Science from Hyderabad Central University, where she graduated with distinction. She is currently working as a Manager in Microsoft, leading a team of talented developers and engineers.\n\nNitya Singh has a passion for creating innovative solutions that can improve the lives of millions of people. She has been involved in various projects and is recognized for her outstanding contributions and leadership. She is also a mentor and coach for aspiring software professionals, helping them to achieve their goals and dreams.",
+      bio: "Education is the manifestation of perfection already in man, as Swami Vivekananda once said. At Birla Heritage International School siwan, we have taken it upon ourselves to unlock this latent perfection and talent in every child under our care.\n\nNitya Singh is a software professional with 16 years of experience in Microsoft, one of the world's leading technology companies. She has a post-graduate degree in Computer Science from Hyderabad Central University, where she graduated with distinction. She is currently working as a Manager in Microsoft, leading a team of talented developers and engineers.\n\nNitya Singh has a passion for creating innovative solutions that can improve the lives of millions of people. She has been involved in various projects and is recognized for her outstanding contributions and leadership. She is also a mentor and coach for aspiring software professionals, helping them to achieve their goals and dreams.",
       bgColor: "bg-[#003262]",
     },
     {
       name: "Subash Singh",
       title: "Director's Message",
       image: "/team_placeholder.jpeg",
-      bio: "The goal of Birla Open Minds International School is to give kids a smooth learning environment so they can reach their greatest potential. We wanted to offer something special where a child can examine all options before starting the journey of academic learning, as there are so many schools popping up all over the place but they are all limited to a certain area of learning approach. In order to ensure that a person's creativity and learning are unrestricted, we sought to maintain the formative years as open and inclusive as possible.",
+      bio: "The goal of Birla Heritage International School siwan is to give kids a smooth learning environment so they can reach their greatest potential. We wanted to offer something special where a child can examine all options before starting the journey of academic learning, as there are so many schools popping up all over the place but they are all limited to a certain area of learning approach. In order to ensure that a person's creativity and learning are unrestricted, we sought to maintain the formative years as open and inclusive as possible.",
       bgColor: "bg-[#003262]",
     },
     {

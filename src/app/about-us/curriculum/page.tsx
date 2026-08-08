@@ -53,16 +53,16 @@ export default function CurriculumPage() {
           <div className="bg-[#f8f9fa] p-8 md:p-12 shadow-sm border-l-4 border-[#FDB515] border-y border-r border-gray-100">
             <div className="text-gray-700 text-base md:text-lg leading-relaxed flex flex-col gap-4 text-justify font-medium">
               <p>
-                Birla Open Minds International School - CBSE School (BOMIS), offers a comprehensive solution for education that envelops the individual's learning period right from the formative early years to K-12 schooling.
+                Birla Heritage International School siwan - CBSE School (BOMIS), offers a comprehensive solution for education that envelops the individual's learning period right from the formative early years to K-12 schooling.
               </p>
               <p>
-                Birla Open Minds International School - CBSE School (BOMIS) encompasses wide-ranging interests in the sphere of high quality education with dedication to excellence.
+                Birla Heritage International School siwan - CBSE School (BOMIS) encompasses wide-ranging interests in the sphere of high quality education with dedication to excellence.
               </p>
               <p>
                 Today, Birla Edutech Limited has a close-knit network of academicians, researchers and professionals. We focus on providing contemporary and world-class education for NURTURING INDIAS TOMORROW.
               </p>
               <p>
-                The Birla Open Minds International School - CBSE School provide a nurturing environment wherein young children feel loved, cared, secured, respected and valued. The school focuses on 4 C's: Care, Co-operation, Collaboration and Courtesy. We believe that today's children are tomorrow's leaders!
+                The Birla Heritage International School siwan - CBSE School provide a nurturing environment wherein young children feel loved, cared, secured, respected and valued. The school focuses on 4 C's: Care, Co-operation, Collaboration and Courtesy. We believe that today's children are tomorrow's leaders!
               </p>
             </div>
           </div>
@@ -80,7 +80,7 @@ export default function CurriculumPage() {
           <div className="bg-[#f8f9fa] p-8 md:p-12 shadow-sm border-l-4 border-[#FDB515] border-y border-r border-gray-100">
             <div className="text-gray-700 text-base md:text-lg leading-relaxed text-justify font-medium">
               <p>
-                Welcome to Birla Open Minds International School, Siwan, a school for CBSE students. Our programs are designed to enhance the academic and personal development of our students. We provide a supportive and stimulating environment for students to learn and grow. We offer a wide range of programs to meet the needs and interests of our students. Our programs include academic subjects such as Math, Science, and English, as well as extracurricular activities such as sports, music, and art. Our experienced and dedicated teachers work closely with our students to help them achieve their full potential.
+                Welcome to Birla Heritage International School siwan, a school for CBSE students. Our programs are designed to enhance the academic and personal development of our students. We provide a supportive and stimulating environment for students to learn and grow. We offer a wide range of programs to meet the needs and interests of our students. Our programs include academic subjects such as Math, Science, and English, as well as extracurricular activities such as sports, music, and art. Our experienced and dedicated teachers work closely with our students to help them achieve their full potential.
               </p>
             </div>
           </div>

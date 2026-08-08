@@ -15,7 +15,7 @@ export default function LeadershipPage() {
       description: (
         <>
           <p className="mb-4">
-            At Birla Open Minds International School Siwan, we have taken it upon ourselves to unlock this latent perfection and talent in every child under our care.
+            At Birla Heritage International School siwan, we have taken it upon ourselves to unlock this latent perfection and talent in every child under our care.
           </p>
           <p className="mb-4">
             Nitya Singh is a software professional with 16 years of experience in Microsoft, one of the world&apos;s leading technology companies. She has a post-graduate degree in Computer Science from Hyderabad Central University, where she graduated with distinction. She is currently working as a Manager in Microsoft, leading a team of talented developers and engineers.
@@ -35,7 +35,7 @@ export default function LeadershipPage() {
       description: (
         <>
           <p className="mb-4">
-            The goal of Birla Open Minds International School is to give kids a smooth learning environment so they can reach their greatest potential. We wanted to offer something special where a child can examine all options before starting the journey of academic learning.
+            The goal of Birla Heritage International School siwan is to give kids a smooth learning environment so they can reach their greatest potential. We wanted to offer something special where a child can examine all options before starting the journey of academic learning.
           </p>
           <p>
             As there are so many schools popping up all over the place but they are all limited to a certain area of learning approach. In order to ensure that a person&apos;s creativity and learning are unrestricted, we sought to maintain the formative years as open and inclusive as possible.
@@ -92,7 +92,7 @@ export default function LeadershipPage() {
             Our Leaders & Advisors
           </h1>
           <p className="text-white/80 text-lg md:text-xl max-w-2xl font-light">
-            Meet the visionaries who inspire excellence and shape the future of Birla Open Minds International School, Siwan.
+            Meet the visionaries who inspire excellence and shape the future of Birla Heritage International School siwan.
           </p>
         </div>
         

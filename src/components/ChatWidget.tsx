@@ -1,6 +1,6 @@
 export default function ChatWidget() {
   const phone = "917633800196"; // WhatsApp number (country code + number, no +)
-  const message = encodeURIComponent("Hello! I'm interested in admissions at Birla Open Minds International School, Siwan.");
+  const message = encodeURIComponent("Hello! I'm interested in admissions at Birla Heritage International School siwan.");
   const whatsappUrl = `https://wa.me/${phone}?text=${message}`;
 
   return (

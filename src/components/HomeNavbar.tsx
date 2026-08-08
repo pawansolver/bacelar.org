@@ -19,7 +19,7 @@ interface Announcement {
   isActive: number;
 }
 
-const FALLBACK_ANNOUNCEMENT = '🎓 Welcome to Birla Open Minds International School, Siwan — Admissions Open for 2025–26!';
+const FALLBACK_ANNOUNCEMENT = '🎓 Welcome to Birla Heritage International School siwan — Admissions Open for 2025–26!';
 
 const montserrat = Montserrat({ subsets: ["latin"] });
 

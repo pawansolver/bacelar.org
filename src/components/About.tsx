@@ -10,13 +10,13 @@ export default function About() {
       <div className="max-w-7xl mx-auto px-4 md:px-8 relative z-10">
         <div className="text-center mb-8 md:mb-10">
           <h2 className="heading-xl text-2xl sm:text-3xl md:text-4xl inline-block relative max-w-4xl">
-            Birla Open Minds International School - A School that redefines education.
+            Birla Heritage International School siwan - A School that redefines education.
           </h2>
         </div>
         <div className="flex flex-col md:flex-row items-center gap-8 lg:gap-12">
           <div className="w-full md:w-1/2 text-[#4b5563] text-[15px] md:text-[17px] leading-relaxed font-medium text-justify">
             <p className="mb-4">
-              Birla Open Minds reiterate and restore what Tagore called the hallmarks of childhood- &apos;the Joy of Learning&apos; and the &apos;Creative Spirit&apos;. The School firmly believes in the uniqueness of each child, thereby fostering holistic development through integrated learning opportunities nurturing the 21st Century Skills.
+              Birla Heritage International School siwan reiterate and restore what Tagore called the hallmarks of childhood- &apos;the Joy of Learning&apos; and the &apos;Creative Spirit&apos;. The School firmly believes in the uniqueness of each child, thereby fostering holistic development through integrated learning opportunities nurturing the 21st Century Skills.
             </p>
             <p className="mb-8">
               Our philosophy is based on the constructive approach where the learners are actively involved in their learning in a self-governing environment. Learning experiences are interactive, student-centric and progress from known to unknown, concrete to abstract and local to global.
